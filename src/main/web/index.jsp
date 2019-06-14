@@ -24,7 +24,9 @@
         <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
           <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-shopping-cart"></i> Cart</button> &nbsp;
           <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-sign-in-alt"></i> Signup</button> &nbsp;
-          <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" ><i class="fas fa-user-circle"></i> Login</button> &nbsp;
+          <a href="#" data-toggle="modal" data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" ><i class="fas fa-user-circle"></i>
+
+          Login</a> &nbsp;
         </form>
         <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value == null ? "dnone" : null}">
           <li class="nav-item dropdown">
@@ -45,5 +47,24 @@
         Home
       </div>
     </div>
+
+
+    <!--Login Modal Content-->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login</h1><br>
+				  <form>
+					<input type="text" name="user" placeholder="Username">
+					<input type="password" name="pass" placeholder="Password">
+					<input type="submit" name="login" class="login loginmodal-submit btn btn-success" value="Login">
+				  </form>
+
+				  <div class="login-help">
+					<label>Please click</label>Register<a href="#"></a> <span> If you dont have an Account.</span>
+				  </div>
+				</div>
+			</div>
+  </div>
   </body>
 </html>
