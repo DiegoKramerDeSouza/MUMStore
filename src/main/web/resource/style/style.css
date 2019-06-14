@@ -6,6 +6,12 @@ form>li{
     list-style: none;
 }
 
+.navbar-light .navbar-brand {
+    color: white;
+    font-size: 22px;
+}
+
+
 
 
 /****** LOGIN MODAL ******/
@@ -105,3 +111,10 @@ form>li{
 .login-help{
   font-size: 12px;
 }
+
+
+
+/*--End Of LOGIN Modal--*/
+
+
+

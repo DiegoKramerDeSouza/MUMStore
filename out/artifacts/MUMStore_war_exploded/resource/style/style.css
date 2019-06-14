@@ -6,14 +6,18 @@ form>li{
     list-style: none;
 }
 
+.navbar-light .navbar-brand {
+    color: white;
+    font-size: 22px;
+}
+
+
 
 
 /****** LOGIN MODAL ******/
 
-.modal{
-   
-    top: 100;
-}
+
+
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;
@@ -107,3 +111,10 @@ form>li{
 .login-help{
   font-size: 12px;
 }
+
+
+
+/*--End Of LOGIN Modal--*/
+
+
+
