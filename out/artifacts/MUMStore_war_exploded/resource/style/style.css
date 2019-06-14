@@ -1,0 +1,7 @@
+.dnone{
+    display: none !important;
+}
+
+form>li{
+    list-style: none;
+}
