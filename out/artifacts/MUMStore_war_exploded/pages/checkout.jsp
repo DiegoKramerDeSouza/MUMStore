@@ -19,7 +19,7 @@
     </head>
     <body class="bg-light">
         <nav class="navbar navbar-light bg-dark justify-content-between">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="/">Logo</a>
             <div class="" id="smallbar">
                 <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
                     <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-shopping-cart"></i> Cart</button> &nbsp;
@@ -41,8 +41,70 @@
             </div>
         </nav>
         <div class="container">
-            <div>
-                Checkout
+            <div class="card">
+                <div class="card-body">
+                    <h1 class="card-title">Checkout</h1>
+
+                    <!-- repeat this for each product -->
+                    <div class="media">
+                        <img class="align-self-center mr-3 thumb" src="resource/img/products/product1.jpg" alt="${cart.item.name}">
+                        <div class="media-body">
+                            <h5 class="mt-0">Item Four</h5>
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            <div class="text-right">
+                                <span>Quantity 1</span>
+                                <span><i class="far fa-trash-alt"></i></span>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                            <div class="text-right">
+                                <span>Price:$100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media">
+                        <img class="align-self-center mr-3 thumb" src="resource/img/products/product1.jpg" alt="${cart.item.name}">
+                        <div class="media-body">
+                            <h5 class="mt-0">Item Four</h5>
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            <div class="text-right">
+                                <span>Quantity 1</span>
+                                <span><i class="far fa-trash-alt"></i></span>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                            <div class="text-right">
+                                <span>Price:$100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media">
+                        <img class="align-self-center mr-3 thumb" src="resource/img/products/product1.jpg" alt="${cart.item.name}">
+                        <div class="media-body">
+                            <h5 class="mt-0">Item Four</h5>
+                            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+                            <div class="text-right">
+                                <span>Quantity 1</span>
+                                <span><i class="far fa-trash-alt"></i></span>
+                            </div>
+                            <div class="dropdown-divider"></div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!
+                            <div class="text-right">
+                                <span>Price:$100</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--------------------------------------->
+
+                    <div class="dropdown-divider"></div>
+                    <div class="text-right">
+                        <strong>Total:$100</strong>
+                    </div>
+
+                </div>
             </div>
         </div>
     </body>

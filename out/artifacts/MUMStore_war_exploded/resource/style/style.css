@@ -1,8 +1,3 @@
-body{
-  font-family: 'Open Sans', sans-serif;
-font-family: 'Lato', sans-serif;
-}
-
 .dnone{
     display: none !important;
 }
@@ -16,22 +11,10 @@ form>li{
     font-size: 22px;
 }
 
-/*--Vertical Menu Bar--*/
-.leftbar{
-  margin-top: 25px;
-
-  padding:0px;
-
+.thumb{
+  width: 64pt;
 }
 
-.list-group-item{
-  color:black
-}
-
-.list-group a:hover{
-  background-color:#1e7e34;
-  color:white;
-}
 
 
 
@@ -51,7 +34,7 @@ form>li{
   font-family: roboto;
 }
 
-.loginmodal-container h5 {
+.loginmodal-container h1 {
   text-align: center;
   font-size: 1.8em;
   font-family: roboto;
@@ -94,9 +77,9 @@ form>li{
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
-  border-radius: 3px;
-  -webkit-user-select: none;
-  user-select: none;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
 }
 
 .loginmodal-submit {
@@ -132,64 +115,10 @@ form>li{
 .login-help{
   font-size: 12px;
 }
-.products-div img{
-  width:700px;
-  height:400px;
-}
-
 
 
 
 /*--End Of LOGIN Modal--*/
 
 
-/*CSS for SignUp.jsp*/
-.signupcontainer h2{
-  text-align: center;
-  width: 700px;
-  margin: auto;
-}
-.signupcontainer>.form-horizontal{
-  width: 80%;
-  width: auto;
-  margin-top: 30px;
-  border: 5px solid #ededed;
-}
-.signupcontainer .form-group{
-  align-content: center;
-  margin-left: 80px;
-}
 
-/*End of SignUp.jsp */
-
-
-/*--Footer--*/
-.section-padding {
-	padding: 60px 0;
-}
-.bottom {
-    background-color: #343a40;
-}
-.bottom .copyright {
-    color: #e5e5e5;
-    font-weight: 600;
-}
-.copyright a {
-    color: #f2ff49;
-    margin-left: 3px;
-    padding-right: 3px;
-}
-.bottom p {
-    margin-bottom: 0;
-    line-height: 50px;
-    font-size: 16px;
-    font-weight: 400;
-}
-.copyright p span {
-    color: #d1caca;
-}
-.bottom .copyright p, .bottom .copyright a:hover{
-    color: #6c6d83;
-}
-
-/*--End of Footer Style--*/
