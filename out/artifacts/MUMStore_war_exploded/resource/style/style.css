@@ -116,5 +116,18 @@ form>li{
 
 /*--End Of LOGIN Modal--*/
 
-
-
+.signupcontainer h2{
+  text-align: center;
+  width: 700px;
+  margin: auto;
+}
+.signupcontainer>.form-horizontal{
+  width: 80%;
+  width: auto;
+  margin-top: 30px;
+  border: 5px solid #ededed;
+}
+.signupcontainer .form-group{
+  align-content: center;
+  margin-left: 80px;
+}
