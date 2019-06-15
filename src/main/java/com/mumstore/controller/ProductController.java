@@ -34,7 +34,7 @@ public class ProductController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
         List<Product> products = dao.getAllProducts(con);
-        System.out.println(products.get(0).getId());
+        //System.out.println(products.get(0).getId());
         PrintWriter out = resp.getWriter();
         out.print(mapper.toJson(products));
     }
