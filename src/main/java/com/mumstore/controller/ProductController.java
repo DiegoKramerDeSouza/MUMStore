@@ -33,6 +33,7 @@ public class ProductController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
         PrintWriter out = resp.getWriter();
         MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
         if(req.getParameter("id") != null){
