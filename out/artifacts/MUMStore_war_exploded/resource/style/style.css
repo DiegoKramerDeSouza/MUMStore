@@ -11,6 +11,46 @@ form>li{
     font-size: 22px;
 }
 
+/*--Vertical Menu Bar--*/
+
+.leftbar{
+    
+    margin-top: 25px;
+    padding-left:0px;
+
+    width:70%;
+
+}
+
+.list-group-item{
+  color:black
+}
+
+.list-group a:hover{
+  background-color:#1e7e34;
+  color:white;
+}
+
+
+/*--Index page product display css--*/
+img.card-img-top{
+    height: 300px;
+}
+
+.card-footer{
+    text-align: center;
+}
+
+.card-body {
+
+
+    font-size: 10px;
+
+
+}
+
+
+
 
 
 
@@ -118,3 +158,33 @@ form>li{
 
 
 
+/*--Footer--*/
+.section-padding {
+	padding: 60px 0;
+}
+.bottom {
+    background-color: #343a40;
+}
+.bottom .copyright {
+    color: #e5e5e5;
+    font-weight: 600;
+}
+.copyright a {
+    color: #f2ff49;
+    margin-left: 3px;
+    padding-right: 3px;
+}
+.bottom p {
+    margin-bottom: 0;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+.copyright p span {
+    color: #d1caca;
+}
+.bottom .copyright p, .bottom .copyright a:hover{
+    color: #6c6d83;
+}
+
+/*--End of Footer Style--*/
