@@ -27,7 +27,7 @@
         <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
           <i class="fas fa-shopping-cart"></i> Cart
         </a> &nbsp;
-        <a href="#" class="btn btn-success my-2 my-sm-0 btn-sm" >
+        <a href="pages/signup.jsp" class="btn btn-success my-2 my-sm-0 btn-sm" >
           <i class="fas fa-sign-in-alt"></i> Signup
         </a> &nbsp;
         <a href="#" data-toggle="modal" data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" >
@@ -253,7 +253,7 @@
 
           </form>
           <div class="login-help">
-            <label>Please click  </label><a href="pages/signup.jsp"></a> Register<span> If you dont have an Account.</span>
+            <label>Please click  </label><a href="pages/signup.jsp"> Register </a><span> If you dont have an Account.</span>
           </div>
         </div>
 
