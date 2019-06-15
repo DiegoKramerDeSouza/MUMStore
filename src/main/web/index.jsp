@@ -137,7 +137,7 @@
                 <p class="card-text">Lorem ipsum dolor sit amet</p>
               </div>
               <div class="card-footer">
-                <a href="cart.jsp" class="btn btn-success">Add to Cart</a>
+                <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -153,7 +153,7 @@
                 <p class="card-text">Lorem ipsum dolor sit amet</p>
               </div>
               <div class="card-footer">
-                 <a href="cart.jsp" class="btn btn-success">Add to Cart</a>
+                 <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -169,7 +169,7 @@
                 <p class="card-text">Lorem ipsum dolor sit amet</p>
               </div>
               <div class="card-footer">
-                <a href="cart.jsp" class="btn btn-success">Add to Cart</a>
+                <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -185,7 +185,7 @@
                 <p class="card-text">Lorem ipsum dolor sit amet</p>
               </div>
               <div class="card-footer">
-                 <a href="cart.jsp" class="btn btn-success">Add to Cart</a>
+                 <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -201,7 +201,7 @@
                 <p class="card-text">Lorem ipsum dolor sit amet</p>
               </div>
               <div class="card-footer">
-                <a href="cart.jsp" class="btn btn-success">Add to Cart</a>
+                <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -217,7 +217,7 @@
                 <p class="card-text">Lorem ipsum dolor sit amet</p>
               </div>
               <div class="card-footer">
-               <a href="cart.jsp" class="btn btn-success">Add to Cart</a>
+               <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
               </div>
             </div>
           </div>
@@ -253,7 +253,7 @@
 
           </form>
           <div class="login-help">
-            <label>Please click </label><a href="signup.jsp"></a> Register<span> If you dont have an Account.</span>
+            <label>Please click  </label><a href="pages/signup.jsp"></a> Register<span> If you dont have an Account.</span>
           </div>
         </div>
 
