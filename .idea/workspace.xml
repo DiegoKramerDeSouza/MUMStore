@@ -6,9 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3d3538ad-38f1-4603-bae3-57aee4380786" name="Default Changelist" comment="">
+    <list default="true" id="3d3538ad-38f1-4603-bae3-57aee4380786" name="Default Changelist" comment="Merge branch 'sandeep'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;out/artifacts/MUMStore_war_exploded/index.jsp&#10;#&#9;src/main/web/index.jsp">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/MUMStore_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MUMStore_war_exploded/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/MUMStore_war_exploded/resource/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/MUMStore_war_exploded/resource/style/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/web/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/web/resource/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/web/resource/style/style.css" afterDir="false" />
@@ -22,8 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -39,11 +37,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/web/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
+            <state relative-caret-position="498">
+              <caret line="128" column="9" lean-forward="true" selection-start-line="128" selection-start-column="9" selection-end-line="128" selection-end-column="9" />
               <folding>
                 <element signature="e#1698#1704#0#HTML" expanded="true" />
-                <element signature="e#1819#1825#0#HTML" expanded="true" />
+                <element signature="e#1826#1832#0#HTML" expanded="true" />
                 <element signature="e#1947#1953#0#HTML" expanded="true" />
               </folding>
             </state>
@@ -328,7 +326,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20201000" />
+    <option name="totallyTimeSpent" value="20781000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,12 +351,12 @@
       <window_info id="Image Layers" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21216407" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.21216407" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32956153" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.17397454" />
+      <window_info anchor="bottom" id="Application Servers" order="7" visible="true" weight="0.17397454" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
@@ -506,11 +504,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="117" column="61" selection-start-line="117" selection-start-column="61" selection-end-line="117" selection-end-column="61" />
+        <state relative-caret-position="498">
+          <caret line="128" column="9" lean-forward="true" selection-start-line="128" selection-start-column="9" selection-end-line="128" selection-end-column="9" />
           <folding>
             <element signature="e#1698#1704#0#HTML" expanded="true" />
-            <element signature="e#1819#1825#0#HTML" expanded="true" />
+            <element signature="e#1826#1832#0#HTML" expanded="true" />
             <element signature="e#1947#1953#0#HTML" expanded="true" />
           </folding>
         </state>
