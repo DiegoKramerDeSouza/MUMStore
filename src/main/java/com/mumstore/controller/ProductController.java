@@ -1,6 +1,7 @@
 package com.mumstore.controller;
 
 import com.google.gson.Gson;
+import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoDatabase;
 import com.mumstore.dao.ProductDAO;
 import com.mumstore.model.Product;
@@ -32,11 +33,18 @@ public class ProductController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
-        List<Product> products = dao.getAllProducts(con);
-        //System.out.println(products.get(0).getId());
         PrintWriter out = resp.getWriter();
-        out.print(mapper.toJson(products));
+        MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
+        if(req.getParameter("id") != null){
+            List<Product> products = dao.getProduct(con, "id", req.getParameter("id"));
+            out.print(mapper.toJson(products));
+        } else if(req.getParameter("type") != null){
+            List<Product> products = dao.getProduct(con, "type", req.getParameter("type"));
+            out.print(mapper.toJson(products));
+        } else {
+            List<Product> products = dao.getAllProducts(con);
+            out.print(mapper.toJson(products));
+        }
     }
 
 }
