@@ -83,7 +83,7 @@
       <div class="leftbar col-lg-3">
 
 
-        <div class="list-group">
+        <div class="list-group" id="theFixed">
           <a href="#" class="list-group-item">Category 1</a>
           <a href="#" class="list-group-item">Category 2</a>
           <a href="#" class="list-group-item">Category 3</a>
@@ -287,5 +287,5 @@
   <!--Bottom Footer-->
 
   </body>
-
+  <script src="resource/script/script.js"></script>
 </html>
