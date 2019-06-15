@@ -41,10 +41,10 @@
             </div>
         </nav>
         <div class="container">
-            <div>
+            <div class="signupcontainer">
+                <h2>SignUp Form</h2>
 
                 <form class="form-horizontal" role="form" action="#" method="post">
-                    <h2>Registration</h2>
                     <div class="form-group">
                         <label for="firstName" class="col-sm-3 control-label">Full Name*</label>
                         <div class="col-sm-9">
@@ -81,7 +81,7 @@
                             <span class="help-block">*Required fields</span>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    <button type="submit" class="btn btn-success btn-block">Register</button>
                 </form>
 
             </div>
