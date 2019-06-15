@@ -12,6 +12,26 @@ form>li{
 }
 
 
+/*--Index page product display css--*/
+img.card-img-top{
+    height: 300px;
+}
+
+.card-footer{
+    text-align: center;
+}
+
+.card-body {
+
+
+    font-size: 10px;
+
+
+}
+
+
+
+
 
 
 /****** LOGIN MODAL ******/
