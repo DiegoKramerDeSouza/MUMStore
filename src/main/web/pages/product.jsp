@@ -45,6 +45,7 @@
             </div>
         </nav>
         <div class="container">
+<%--            Replace this with the clicked image id--%>
             <div class="row">
 
                 <div class="col-xs-4 item-photo">
@@ -95,8 +96,8 @@
                         </small>
                     </div>
                 </div>
-
             </div>
+<%--            End of row div--%>
         </div>
     </body>
 </html>
