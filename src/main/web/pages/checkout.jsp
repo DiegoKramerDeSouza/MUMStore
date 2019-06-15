@@ -41,8 +41,11 @@
             </div>
         </nav>
         <div class="container">
-            <div>
-                Checkout
+            <div class="card">
+                <div class="card-body">
+                    <span class="card-title">Checkout</span>
+
+                </div>
             </div>
         </div>
     </body>

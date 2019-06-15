@@ -21,14 +21,18 @@
   </head>
   <body class="bg-light">
     <nav class="navbar navbar-light bg-dark justify-content-between">
-      <a class="navbar-brand" href="#">MUM STORE</a>
+      <a class="navbar-brand" href="/">MUM STORE</a>
       <div class="" id="smallbar">
         <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
-          <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-shopping-cart"></i> Cart</button> &nbsp;
-          <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-sign-in-alt"></i> Signup</button> &nbsp;
-          <a href="#" data-toggle="modal" data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" ><i class="fas fa-user-circle"></i>
-
-          Login</a> &nbsp;
+          <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
+            <i class="fas fa-shopping-cart"></i> Cart
+          </a> &nbsp;
+          <a href="#" class="btn btn-success my-2 my-sm-0 btn-sm" >
+            <i class="fas fa-sign-in-alt"></i> Signup
+          </a> &nbsp;
+          <a href="#" data-toggle="modal" data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" >
+            <i class="fas fa-user-circle"></i> Login
+          </a> &nbsp;
         </form>
         <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value == null ? "dnone" : null}">
           <li class="nav-item dropdown">
@@ -47,48 +51,48 @@
 
 
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER">
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER">
+        </div>
+        <div class="carousel-item">
+          <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER">
+        </div>
+        <div class="carousel-item">
+          <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-    <div class="carousel-item">
-      <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER">
-    </div>
-    <div class="carousel-item">
-      <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER">
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 
-  <!--Main Contents inside container-->
+    <!--Main Contents inside container-->
 
     <div class="container" id="main-container">
 
       <div class="row">
         <div class="col-lg-4">
           <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Active</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </li>
-</ul>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Active</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
         </div>
         <div class="col-lg-8">
 
@@ -100,22 +104,37 @@
 
 
     <!--Login Modal Content-->
-  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    	  <div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Login</h1><br>
-				  <form>
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
-					<input type="submit" name="login" class="login loginmodal-submit btn btn-success" value="Login">
-				  </form>
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1>Login</h1>
+          <div class="dropdown-divider"></div>
+          <form>
+            <input type="text" name="user" placeholder="Username">
+            <input type="password" name="pass" placeholder="Password">
+            <div class="dropdown-divider"></div>
+            <input type="submit" name="login" class="login loginmodal-submit btn btn-success" value="Login">
+          </form>
 
-				  <div class="login-help">
-					<label>Please click </label><a href="signup.jsp"></a> Register<span> If you dont have an Account.</span>
-				  </div>
-				</div>
-			</div>
-  </div>
+          <div class="login-help">
+            <label>Please click </label><a href="signup.jsp"></a> Register<span> If you dont have an Account.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Cart Modal Content-->
+    <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1><i class="fas fa-shopping-cart"></i> Cart</h1>
+          <div class="dropdown-divider"></div>
+          Cart here!
+        </div>
+      </div>
+    </div>
+
+
   </body>
 
 </html>
