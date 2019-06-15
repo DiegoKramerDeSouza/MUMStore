@@ -41,14 +41,14 @@
             </div>
         </nav>
         <div class="container">
-            <div class="signupcontainer">
-                <h2>SignUp Form</h2>
+            <div>
 
                 <form class="form-horizontal" role="form" action="#" method="post">
+                    <h2>Registration</h2>
                     <div class="form-group">
                         <label for="firstName" class="col-sm-3 control-label">Full Name*</label>
                         <div class="col-sm-9">
-                            <input type="text" id="firstName" placeholder="Full Name" class="form-control" name="name" autofocus>
+                            <input type="text" id="firstName" placeholder="Full Name" class="form-control" name="firstName" autofocus>
                         </div>
                     </div>
                     <div class="form-group">
@@ -81,7 +81,7 @@
                             <span class="help-block">*Required fields</span>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success btn-block">Register</button>
+                    <button type="submit" class="btn btn-primary btn-block">Register</button>
                 </form>
 
             </div>
