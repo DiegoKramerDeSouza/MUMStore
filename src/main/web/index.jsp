@@ -234,8 +234,7 @@
     </div>
     <!-- /.container -->
     <!--End of Main container-->
-
-
+    
     <!--Login Modal Content-->
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
@@ -249,6 +248,7 @@
             <form>
               <input type="text" name="user" placeholder="Username">
               <input type="password" name="pass" placeholder="Password">
+              <div class="dropdown-divider"></div>
               <input type="submit" name="login" class="login btn btn-success" value="Login">
 
             </form>
@@ -261,7 +261,16 @@
       </div>
     </div>
 
-
+    <!--Cart Modal Content-->
+    <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal-dialog">
+        <div class="loginmodal-container">
+          <h1><i class="fas fa-shopping-cart"></i> Cart</h1>
+          <div class="dropdown-divider"></div>
+          Cart here!
+        </div>
+      </div>
+    </div>
 
     <!--Bottom Footer-->
     <div class="bottom section-padding">
