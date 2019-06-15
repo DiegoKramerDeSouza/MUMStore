@@ -20,54 +20,58 @@
 
   </head>
   <body class="bg-light">
-    <nav class="navbar navbar-light bg-dark justify-content-between">
-      <a class="navbar-brand" href="#">MUM STORE</a>
-      <div class="" id="smallbar">
-        <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
-          <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-shopping-cart"></i> Cart</button> &nbsp;
-          <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-sign-in-alt"></i> Signup</button> &nbsp;
-          <a href="#" data-toggle="modal"  data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" ><i class="fas fa-user-circle"></i>
+  <nav class="navbar navbar-light bg-dark justify-content-between">
+    <a class="navbar-brand" href="/">MUM STORE</a>
+    <div class="" id="smallbar">
+      <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
+        <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
+          <i class="fas fa-shopping-cart"></i> Cart
+        </a> &nbsp;
+        <a href="#" class="btn btn-success my-2 my-sm-0 btn-sm" >
+          <i class="fas fa-sign-in-alt"></i> Signup
+        </a> &nbsp;
+        <a href="#" data-toggle="modal" data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" >
+          <i class="fas fa-user-circle"></i> Login
+        </a> &nbsp;
+      </form>
+      <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value == null ? "dnone" : null}">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-circle"></i> ${cookie.user.value}
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Signout</a>
+          </div>
+        </li>
+      </form>
+    </div>
+  </nav>
 
-          Login</a> &nbsp;
-        </form>
-        <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value == null ? "dnone" : null}">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="fas fa-user-circle"></i> ${cookie.user.value}
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Signout</a>
-            </div>
-          </li>
-        </form>
-      </div>
-    </nav>
 
 
-
-<%--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">--%>
-<%--  <div class="carousel-inner">--%>
-<%--    <div class="carousel-item active">--%>
-<%--      <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">--%>
-<%--    </div>--%>
-<%--    <div class="carousel-item">--%>
-<%--      <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">--%>
-<%--    </div>--%>
-<%--    <div class="carousel-item">--%>
-<%--      <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">--%>
-<%--    </div>--%>
-<%--  </div>--%>
-<%--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">--%>
-<%--    <span class="carousel-control-prev-icon" aria-hidden="true"></span>--%>
-<%--    <span class="sr-only">Previous</span>--%>
-<%--  </a>--%>
-<%--  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">--%>
-<%--    <span class="carousel-control-next-icon" aria-hidden="true"></span>--%>
-<%--    <span class="sr-only">Next</span>--%>
-<%--  </a>--%>
-<%--</div>--%>
+  <%--<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">--%>
+  <%--  <div class="carousel-inner">--%>
+  <%--    <div class="carousel-item active">--%>
+  <%--      <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">--%>
+  <%--    </div>--%>
+  <%--    <div class="carousel-item">--%>
+  <%--      <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">--%>
+  <%--    </div>--%>
+  <%--    <div class="carousel-item">--%>
+  <%--      <img src="resource/img/banner.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">--%>
+  <%--    </div>--%>
+  <%--  </div>--%>
+  <%--  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">--%>
+  <%--    <span class="carousel-control-prev-icon" aria-hidden="true"></span>--%>
+  <%--    <span class="sr-only">Previous</span>--%>
+  <%--  </a>--%>
+  <%--  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">--%>
+  <%--    <span class="carousel-control-next-icon" aria-hidden="true"></span>--%>
+  <%--    <span class="sr-only">Next</span>--%>
+  <%--  </a>--%>
+  <%--</div>--%>
 
   <!--Main Contents inside container-->
 
@@ -83,7 +87,7 @@
           <a href="#" class="list-group-item">Category 1</a>
           <a href="#" class="list-group-item">Category 2</a>
           <a href="#" class="list-group-item">Category 3</a>
-           <a href="#" class="list-group-item">Category 1</a>
+          <a href="#" class="list-group-item">Category 1</a>
           <a href="#" class="list-group-item">Category 2</a>
           <a href="#" class="list-group-item">Category 3</a>
         </div>
@@ -229,49 +233,59 @@
 
   </div>
   <!-- /.container -->
-    <!--End of Main container-->
+  <!--End of Main container-->
 
-
-    <!--Login Modal Content-->
+  <!--Login Modal Content-->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
     <div class="modal-dialog" role="document">
-    <div class="modal-content loginmodal-container">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+      <div class="modal-content loginmodal-container">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+
+        </div>
+        <div class="modal-body">
+          <form>
+            <input type="text" name="user" placeholder="Username">
+            <input type="password" name="pass" placeholder="Password">
+            <div class="dropdown-divider"></div>
+            <input type="submit" name="login" class="login btn btn-success" value="Login">
+
+          </form>
+          <div class="login-help">
+            <label>Please click </label><a href="signup.jsp"></a> Register<span> If you dont have an Account.</span>
+          </div>
+        </div>
 
       </div>
-      <div class="modal-body">
-            <form>
-              <input type="text" name="user" placeholder="Username">
-              <input type="password" name="pass" placeholder="Password">
-              <input type="submit" name="login" class="login btn btn-success" value="Login">
-
-            </form>
-            <div class="login-help">
-					<label>Please click </label><a href="signup.jsp"></a> Register<span> If you dont have an Account.</span>
-            </div>
-      </div>
-
     </div>
   </div>
+
+  <!--Cart Modal Content-->
+  <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+      <div class="loginmodal-container">
+        <h1><i class="fas fa-shopping-cart"></i> Cart</h1>
+        <div class="dropdown-divider"></div>
+        Cart here!
+      </div>
+    </div>
   </div>
 
-
-
   <!--Bottom Footer-->
-		<div class="bottom section-padding">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<div class="copyright">
-							<p>&copy <span>2019</span> <a href="#" class="transition">MUM STORE</a> All rights reserved.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-<!--Bottom Footer-->
+  <div class="bottom section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="copyright">
+            <p>&copy <span>2019</span> <a href="#" class="transition">MUM STORE</a> All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Bottom Footer-->
+
   </body>
 
 </html>

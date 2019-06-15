@@ -49,37 +49,37 @@
 
                 <div class="col-xs-4 item-photo">
                     <div class="aside">
-                    <img src="https://ak1.ostkcdn.com/images/products/8818677/Samsung-Galaxy-S4-I337-16GB-AT-T-Unlocked-GSM-Android-Cell-Phone-85e3430e-6981-4252-a984-245862302c78_600.jpg" />
-                </div>
+                        <img src="../resource/img/banner1.jpg" alt="selected image" />
+                    </div>
                 </div>
 
                 <div class="col-xs-5">
                     <div class="aside">
-                    <!-- Detail name of product-->
-                    <h3>Samsung Galaxy S4</h3>
+                        <!-- Detail name of product-->
+                        <h3>Name: ${product.name==null ? "banner1": product.name}</h3>
 
-                    <!-- Price -->
-                    <h3>Price: $ ${product.price}</h3>
+                        <!-- Price -->
+                        <h3>Price: $ ${product.price}</h3>
 
-                    <div class="section">
-                        <h6 class="title-attr"><small>Quantity</small></h6>
-                        <div class="btnclass">
-                            <div class="btn-minus"><span class="glyphicon glyphicon-minus"><input type="button" value="-"></span></div>
-                            <input value="1" />
-                            <div class="btn-plus"><span class="glyphicon glyphicon-plus"><input type="button" value="+"/></span></div>
+                        <div class="section">
+                            <h6 class="title-attr"><small>Quantity</small></h6>
+                            <div class="btnclass">
+                                <div class="btn-minus"><span class="glyphicon glyphicon-minus"><input type="button" value="-"></span></div>
+                                <input value="1" />
+                                <div class="btn-plus"><span class="glyphicon glyphicon-plus"><input type="button" value="+"/></span></div>
 
+                            </div>
+                        </div>
+
+                        <!-- Add to cart button -->
+                        <div class="section">
+                            <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to cart</button>
                         </div>
                     </div>
-
-                    <!-- Add to cart button -->
-                    <div class="section">
-                        <button class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Add to cart</button>
-                    </div>
-                </div>
                 </div>
 
                 <div class="col-xs-9">
-                    Name: ${product.name}
+                    <h3>Product Description:</h3>
                     <div class="description">
                         <p>
                             <small>
