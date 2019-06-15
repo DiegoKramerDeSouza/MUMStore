@@ -25,7 +25,7 @@
       <div class="" id="smallbar">
         <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
           <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-shopping-cart"></i> Cart</button> &nbsp;
-          <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-sign-in-alt"></i> Signup</button> &nbsp;
+          <a href="pages/signup.jsp" class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-sign-in-alt"></i> Signup</a> &nbsp;
           <a href="#" data-toggle="modal"  data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" ><i class="fas fa-user-circle"></i>
 
           Login</a> &nbsp;
@@ -249,7 +249,7 @@
 
             </form>
             <div class="login-help">
-					<label>Please click </label><a href="signup.jsp"></a> Register<span> If you dont have an Account.</span>
+					<label> Please click </label><a href="pages/signup.jsp"> Register</a><span> If you dont have an Account.</span>
             </div>
       </div>
 
