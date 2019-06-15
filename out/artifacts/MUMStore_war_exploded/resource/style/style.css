@@ -11,6 +11,10 @@ form>li{
     font-size: 22px;
 }
 
+/*--Vertical Menu Bar--*/
+#vertical-menu{
+  float:left;
+}
 
 
 
@@ -30,7 +34,7 @@ form>li{
   font-family: roboto;
 }
 
-.loginmodal-container h1 {
+.loginmodal-container h5 {
   text-align: center;
   font-size: 1.8em;
   font-family: roboto;
@@ -73,9 +77,9 @@ form>li{
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
-/* border-radius: 3px; */
-/* -webkit-user-select: none;
-  user-select: none; */
+  border-radius: 3px;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .loginmodal-submit {
