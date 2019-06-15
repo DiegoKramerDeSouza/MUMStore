@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label for="firstName" class="col-sm-3 control-label">Full Name*</label>
                         <div class="col-sm-9">
-                            <input type="text" id="firstName" placeholder="Full Name" class="form-control" name="firstName" autofocus>
+                            <input type="text" id="firstName" placeholder="Full Name" class="form-control" name="name" autofocus>
                         </div>
                     </div>
                     <div class="form-group">
