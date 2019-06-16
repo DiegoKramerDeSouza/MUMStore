@@ -32,7 +32,7 @@
         <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
           <i class="fas fa-shopping-cart"></i> Cart
         </a> &nbsp;
-        <a href="pages/signup.jsp" class="btn btn-success my-2 my-sm-0 btn-sm" >
+        <a href="/signup" class="btn btn-success my-2 my-sm-0 btn-sm" >
           <i class="fas fa-sign-in-alt"></i> Signup
         </a> &nbsp;
         <a href="#" data-toggle="modal" data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" >
@@ -45,9 +45,11 @@
             <i class="fas fa-user-circle"></i> ${cookie.user.value}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
+              <i class="fas fa-shopping-cart"></i> Cart
+            </a> &nbsp;
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Signout</a>
+            <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> logout</a>
           </div>
         </li>
       </form>
@@ -160,7 +162,7 @@
 
         </div>
         <div class="modal-body">
-          <form>
+          <form action="/auth" method="post">
             <input type="text" name="user" placeholder="Username">
             <input type="password" name="pass" placeholder="Password">
             <div class="dropdown-divider"></div>
