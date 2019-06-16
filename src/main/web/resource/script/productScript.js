@@ -33,23 +33,37 @@ $(function (){
 
         console.log(data);
 
-        let content = `<div class="col-xs-4 item-photo">
-                           <img src="${data[0].picture}" alt="${data[0].name}" />
-                        </div>
-                         <h3>Name: ${data[0].name}</h3>
-                         <h3>Price: $ ${data[0].price}</h3>
-                        <div class="col-xs-9">
-                            <h3>Product Description:</h3>
-                            <p class="card-text">
-                                 ${data[0].description}
-                            </p>
-                        </div>
-                        <div class="section">
-                            <a href="/checkout?id=${data[0].id}" class="btn btn-success">
-                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">
-                               </span> Add to cart
-                            </a>
-                         </div>`;
+        let content = `    <div class="col-xs-4 item-photo">
+                               <img src="${data[0].picture}" alt="${data[0].name}" />
+                            </div>
+                             <h3>Name: ${data[0].name}</h3>
+                             <h3>Price: $ ${data[0].price}</h3>
+                            <div class="col-xs-9">
+                                <h3>Product Description:</h3>
+                                <p class="card-text">
+                                     ${data[0].description}
+                                </p>
+                            </div>
+                            <div class="blockinline">
+                                <div class="section">
+                                    <h6 class="title-attr">Quantity</h6>
+                                    <div class="btnclass">
+                                        <form method="post">
+                                            <input type="number" min="0" value="1" name="qtd" />
+                                            <input type="hidden" value="${data[0].name}" name="name" />
+                                            <input type="hidden" value="${data[0].id}" name="id" />
+                                            <input type="hidden" value="${data[0].price}" name="price" />
+                                            <input type="hidden" value="${data[0].picture}" name="pic" />
+                                            <input type="hidden" value="${data[0].description}" name="name" />
+                                            <input type="hidden" value="${data[0].type}" name="name" />
+                                            <div class="dropdown-divider"></div>
+                                            <div class="section">
+                                                <input type="submit" class="btn btn-success" value="Add to cart">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>`;
         let div = $("<div>").innerHTML = content;
         console.log(data[0].description);
 
