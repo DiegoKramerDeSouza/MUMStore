@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -131,22 +132,10 @@
         <div class="row" id="showData">
           <div class="display">
 
-            <div class="col-lg-4 col-md-6 mb-4" id="appendData">
-              <div class="card h-100">
-                <a href="pages/product.jsp"><img id="productImage" class="card-img-top" src="resource/img/products/product1.jpg" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="#">Item One</a>
-                  </h4>
-                  <h5 id="productPrice">$24.99</h5>
-                  <p class="card-text" id="productDesc">Lorem ipsum dolor sit amet</p>
-                </div>
-                <div class="card-footer">
-                  <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-                </div>
-              </div>
+            <div class="row" id="appendData">
+<%--            Display block here--%>
+
             </div>
-          </div>
 
         </div>
         <!-- /.row -->
