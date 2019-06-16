@@ -6,3 +6,7 @@
 .total{
     padding: 50px;
 }
+
+.card-body{
+    font-size: inherit !important;
+}
