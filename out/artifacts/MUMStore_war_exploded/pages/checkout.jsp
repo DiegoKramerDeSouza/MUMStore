@@ -22,18 +22,14 @@
 </head>
 <body class="bg-light">
 <nav class="navbar navbar-light bg-dark justify-content-between">
-    <a class="navbar-brand" href="/">Logo</a>
+    <a class="navbar-brand" href="/">MUM STORE</a>
     <div class="" id="smallbar">
         <form class="form-inline my-2 my-lg-0 mr-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user-circle"></i> ${cookie.user.value}
                 </a>
-
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a href="#" data-toggle="modal" data-target="#login-modal" class="dropdown-item" >
-                        <i class="fas fa-user-circle"></i> Login
-                    </a> &nbsp;
                     <a class="dropdown-item" data-toggle="modal" data-target="#cart-modal" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
