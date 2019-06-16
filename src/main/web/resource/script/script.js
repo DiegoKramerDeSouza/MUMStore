@@ -23,7 +23,7 @@ $(function () {
                           </p>
                         </div>
                         <div class="card-footer">
-                          <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
+                          <a href="/checkout?id=${data[i].id}" class="btn btn-success">Add to Cart</a>
                         </div>
                     </div>
                    </div>`;
@@ -31,11 +31,6 @@ $(function () {
 
 
             let div = $("<span>").innerHTML = content;
-
-            // var imagesrc = $(".card p").text(data[i].picture);
-            // var price = $(".card p").text(data[i].price);
-            // var description =$(".card p").text(data[i].description);
-            // var  listItem = $(".card").append(imagesrc).append(price).append(description);
             $("#appendData").append(div);
 
         }
