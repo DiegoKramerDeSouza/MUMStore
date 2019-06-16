@@ -6,16 +6,21 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Home</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8fd24b2ea7.js"></script>
+    <script src="resource/script/script.js"></script>
     <link rel="stylesheet" href="resource/style/style.css" />
 
   </head>
@@ -27,7 +32,7 @@
         <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
           <i class="fas fa-shopping-cart"></i> Cart
         </a> &nbsp;
-        <a href="pages/signup.jsp" class="btn btn-success my-2 my-sm-0 btn-sm" >
+        <a href="/signup" class="btn btn-success my-2 my-sm-0 btn-sm" >
           <i class="fas fa-sign-in-alt"></i> Signup
         </a> &nbsp;
         <a href="#" data-toggle="modal" data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" >
@@ -40,9 +45,9 @@
             <i class="fas fa-user-circle"></i> ${cookie.user.value}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a data-toggle="modal" data-target="#cart-modal" class="dropdown-item" ><i class="fas fa-shopping-cart"></i> Cart</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Signout</a>
+            <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> logout</a>
           </div>
         </li>
       </form>
@@ -124,103 +129,13 @@
           </a>
         </div>
 
-        <div class="row">
+        <div class="row" id="showData">
+          <div class="display">
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top" src="resource/img/products/product1.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
+            <div class="row" id="appendData">
+<%--            Display block here--%>
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product2.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                 <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
             </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product2.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product2.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                 <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product1.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product1.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-               <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
 
         </div>
         <!-- /.row -->
@@ -245,7 +160,7 @@
 
         </div>
         <div class="modal-body">
-          <form>
+          <form action="/auth" method="post">
             <input type="text" name="user" placeholder="Username">
             <input type="password" name="pass" placeholder="Password">
             <div class="dropdown-divider"></div>
@@ -273,7 +188,7 @@
   </div>
 
   <!--Bottom Footer-->
-  <div class="bottom section-padding">
+  <footer class="bottom section-padding">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
@@ -283,9 +198,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
   <!--Bottom Footer-->
-
+  </div>
   </body>
   <script src="resource/script/script.js"></script>
 </html>
