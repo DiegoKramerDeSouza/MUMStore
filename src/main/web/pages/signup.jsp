@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>Signup</title>
         <link rel="stylesheet" href="../resource/style/style.css" />
+        <link rel="stylesheet" href="../resource/style/signupStyle.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -31,50 +32,57 @@
             </div>
         </nav>
         <div class="container">
-            <div>
+            <div class="card">
+                <div class="card-body">
+                    <form class="form-horizontal" role="form" action="/API/register" method="post">
+                        <h2>Registration</h2>
+                        <div class="form-group">
+                            <label for="fullName" class="col-sm-3 control-label">Full Name*</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="fullName" placeholder="Full Name" class="form-control"
+                                       name="fullName" autofocus value="${param.fullName}" required pattern="^.{3,50}$">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-sm-3 control-label">Email* </label>
+                            <div class="col-sm-9">
+                                <input type="email" id="email" placeholder="Email" class="form-control" name= "email"
+                                       value="${param.email}" required pattern="^.+@\w+\.\w+$">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">Password*</label>
+                            <div class="col-sm-9">
+                                <input type="password" id="password" placeholder="Password" class="form-control"
+                                       name="password" required pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,})">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
+                            <div class="col-sm-9">
+                                <input type="password" id="confirmPassword" placeholder="Password" class="form-control"
+                                       name="confirmPassword" required>
+                                <span id="matching"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-sm-3 control-label">Address</label>
+                            <div class="col-sm-9">
+                                <input type="text" id="address" placeholder="address" class="form-control"
+                                       name="address" value="${param.address}" required pattern=".{8,}">
+                            </div>
+                        </div>
 
-                <form class="form-horizontal" role="form" action="#" method="post">
-                    <h2>Registration</h2>
-                    <div class="form-group">
-                        <label for="fullName" class="col-sm-3 control-label">Full Name*</label>
-                        <div class="col-sm-9">
-                            <input type="text" id="fullName" placeholder="Full Name" class="form-control" name="fullName" autofocus>
+                        <div class="form-group">
+                            <div class="col-sm-9 col-sm-offset-3 my-4">
+                                <span class="help-block text-danger">*Required fields</span><br />
+                                <span class="text-danger font-weight-bold">${param.email != null ? "Please enter valid fields values." : null}</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="col-sm-3 control-label">Email* </label>
-                        <div class="col-sm-9">
-                            <input type="email" id="email" placeholder="Email" class="form-control" name= "email" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="col-sm-3 control-label">Password*</label>
-                        <div class="col-sm-9">
-                            <input type="password" id="password" placeholder="Password" class="form-control" name="password">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
-                        <div class="col-sm-9">
-                            <input type="password" id="confirmPassword" placeholder="Password" class="form-control" name="confirmPassword">
-                            <span id="matching"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="col-sm-3 control-label">Address</label>
-                        <div class="col-sm-9">
-                            <input type="text" id="address" placeholder="address" class="form-control" name="address">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-9 col-sm-offset-3">
-                            <span class="help-block">*Required fields</span>
-                        </div>
-                    </div>
-                    <button id="registerbtn" type="submit" class="btn btn-primary btn-block">Register</button>
-                </form>
-
+                        <div class="dropdown-divider"></div>
+                        <button id="registerbtn" type="submit" class="btn btn-primary btn-block w-75 mx-auto d-block">Register</button>
+                    </form>
+                </div>
             </div>
         </div>
 
