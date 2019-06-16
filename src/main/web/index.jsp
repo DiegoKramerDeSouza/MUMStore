@@ -45,9 +45,7 @@
             <i class="fas fa-user-circle"></i> ${cookie.user.value}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
-              <i class="fas fa-shopping-cart"></i> Cart
-            </a> &nbsp;
+            <a data-toggle="modal" data-target="#cart-modal" class="dropdown-item" ><i class="fas fa-shopping-cart"></i> Cart</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> logout</a>
           </div>

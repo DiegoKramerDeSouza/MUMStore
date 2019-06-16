@@ -23,12 +23,18 @@
     </head>
     <body class="bg-light">
         <nav class="navbar navbar-light bg-dark justify-content-between">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="/">MUM STORE</a>
             <div class="" id="smallbar">
                 <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
-                    <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-shopping-cart"></i> Cart</button> &nbsp;
-                    <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-sign-in-alt"></i> Signup</button> &nbsp;
-                    <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" ><i class="fas fa-user-circle"></i> Login</button> &nbsp;
+                    <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
+                        <i class="fas fa-shopping-cart"></i> Cart
+                    </a> &nbsp;
+                    <a href="/signup" class="btn btn-success my-2 my-sm-0 btn-sm" >
+                        <i class="fas fa-sign-in-alt"></i> Signup
+                    </a> &nbsp;
+                    <a href="#" data-toggle="modal" data-target="#login-modal" class="btn btn-outline-success my-2 my-sm-0 btn-sm" >
+                        <i class="fas fa-user-circle"></i> Login
+                    </a> &nbsp;
                 </form>
                 <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value == null ? "dnone" : null}">
                     <li class="nav-item dropdown">
@@ -36,9 +42,9 @@
                             <i class="fas fa-user-circle"></i> ${cookie.user.value}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+                            <a data-toggle="modal" data-target="#cart-modal" class="dropdown-item" ><i class="fas fa-shopping-cart"></i> Cart</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Signout</a>
+                            <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> logout</a>
                         </div>
                     </li>
                 </form>
@@ -69,6 +75,43 @@
                     </div>
                 </div>
 <%--            End of row div--%>
+            </div>
+        </div>
+
+        <!--Login Modal Content-->
+        <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+            <div class="modal-dialog" role="document">
+                <div class="modal-content loginmodal-container">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+
+                    </div>
+                    <div class="modal-body">
+                        <form action="/auth" method="post">
+                            <input type="text" name="user" placeholder="Username">
+                            <input type="password" name="pass" placeholder="Password">
+                            <div class="dropdown-divider"></div>
+                            <input type="submit" name="login" class="login btn btn-success" value="Login">
+
+                        </form>
+                        <div class="login-help">
+                            <label>Please click  </label><a href="pages/signup.jsp"> Register </a><span> If you dont have an Account.</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--Cart Modal Content-->
+        <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="loginmodal-container">
+                    <h1><i class="fas fa-shopping-cart"></i> Cart</h1>
+                    <div class="dropdown-divider"></div>
+                    Cart here!
+                </div>
             </div>
         </div>
     </body>
