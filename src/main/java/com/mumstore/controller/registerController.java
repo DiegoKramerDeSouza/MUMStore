@@ -3,6 +3,7 @@ package com.mumstore.controller;
 import com.google.gson.Gson;
 import com.mongodb.client.MongoDatabase;
 import com.mumstore.dao.UserDAO;
+import com.mumstore.model.User;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -34,11 +35,17 @@ public class registerController extends HttpServlet {
         String confirm = req.getParameter("confirmPassword");
         String address = req.getParameter("address");
         if(validate(user, email, pass, confirm, address)){
-
+            User me = dao.authenticate(con, email, pass);
+            if(me == null){
+                int total = dao.countUsers(con);
+                if(dao.registerUser(con, total ,user, email, pass, address)){
+                    resp.setStatus(2);
+                    resp.sendRedirect("/");
+                    return;
+                }
+            }
         }
         req.getRequestDispatcher("/pages/signup.jsp").forward(req, resp);
-        //resp.sendRedirect("/signup");
-
     }
 
     private boolean validate(String user, String email, String pass, String confirm, String address){
