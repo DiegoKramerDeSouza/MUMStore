@@ -56,7 +56,7 @@
                     <div class="form-group">
                         <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
                         <div class="col-sm-9">
-                            <input type="password" id="confirmPassword" placeholder="Password" class="form-control">
+                            <input type="password" id="confirmPassword" placeholder="Password" class="form-control" name="confirmPassword">
                             <span id="matching"></span>
                         </div>
                     </div>
