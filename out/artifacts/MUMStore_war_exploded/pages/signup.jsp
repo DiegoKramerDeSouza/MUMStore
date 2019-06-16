@@ -12,7 +12,7 @@
         <title>Signup</title>
         <link rel="stylesheet" href="../resource/style/style.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/8fd24b2ea7.js"></script>
@@ -21,24 +21,12 @@
     </head>
     <body class="bg-light">
         <nav class="navbar navbar-light bg-dark justify-content-between">
-            <a class="navbar-brand" href="#">Logo</a>
+            <a class="navbar-brand" href="/">MUM STORE</a>
             <div class="" id="smallbar">
-                <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
-                    <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-shopping-cart"></i> Cart</button> &nbsp;
-                    <button class="btn btn-success my-2 my-sm-0 btn-sm" ><i class="fas fa-sign-in-alt"></i> Signup</button> &nbsp;
-                    <button class="btn btn-outline-success my-2 my-sm-0 btn-sm" ><i class="fas fa-user-circle"></i> Login</button> &nbsp;
-                </form>
-                <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value == null ? "dnone" : null}">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-user-circle"></i> ${cookie.user.value}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Signout</a>
-                        </div>
-                    </li>
+                <form class="form-inline my-2 my-lg-0 mr-auto">
+                    <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
+                        <i class="fas fa-shopping-cart"></i> Cart
+                    </a> &nbsp;
                 </form>
             </div>
         </nav>
@@ -87,6 +75,17 @@
                     <button id="registerbtn" type="submit" class="btn btn-primary btn-block">Register</button>
                 </form>
 
+            </div>
+        </div>
+
+        <!--Cart Modal Content-->
+        <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog">
+                <div class="loginmodal-container">
+                    <h1><i class="fas fa-shopping-cart"></i> Cart</h1>
+                    <div class="dropdown-divider"></div>
+                    Cart here!
+                </div>
             </div>
         </div>
     </body>

@@ -88,7 +88,7 @@
       <div class="leftbar col-lg-3">
 
 
-        <div class="list-group">
+        <div class="list-group" id="theFixed">
           <a href="#" class="list-group-item">Category 1</a>
           <a href="#" class="list-group-item">Category 2</a>
           <a href="#" class="list-group-item">Category 3</a>
@@ -188,7 +188,7 @@
   </div>
 
   <!--Bottom Footer-->
-  <div class="bottom section-padding">
+  <footer class="bottom section-padding">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
@@ -198,9 +198,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </footer>
   <!--Bottom Footer-->
   </div>
   </body>
-
+  <script src="resource/script/script.js"></script>
 </html>
