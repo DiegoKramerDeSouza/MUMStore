@@ -1,5 +1,9 @@
 package com.mumstore.model;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+
 public class User {
 
     private String id;
@@ -7,15 +11,19 @@ public class User {
     private String email;
     private String password;
     private String address;
-    private String[] cart;
+    private List<String[]> cart;
+    private Double total;
+    private int key;
 
-    public User(String id, String name, String email, String password, String address, String[] cart) {
+    public User(String id, String name, String email, String password, String address, List<String[]> cart) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
         this.address = address;
         this.cart = cart;
+        this.total = 0.0;
+        this.key = this.hashCode();
     }
 
     public String getId() {
@@ -58,11 +66,48 @@ public class User {
         this.address = address;
     }
 
-    public String[] getCart() {
+    public List<String[]> getCart() {
         return cart;
     }
 
-    public void setCart(String[] cart) {
+    public void setCart(List<String[]> cart) {
         this.cart = cart;
     }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal() {
+        this.total = cart.stream().mapToDouble(product -> Double.parseDouble(product[2]) * Double.parseDouble(product[6])).sum();
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(){
+        this.key = this.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(email, user.email) &&
+                Objects.equals(password, user.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(email, password);
+    }
+
+    public boolean validate(String user, String pass){
+
+        return this.key == Objects.hash(user, pass);
+    }
+
+
 }
