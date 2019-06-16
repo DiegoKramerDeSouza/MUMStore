@@ -31,13 +31,21 @@ public class registerController extends HttpServlet {
         String pass = req.getParameter("password");
         String confirm = req.getParameter("confirmPassword");
         String address = req.getParameter("address");
+        if(validate(user, email, pass, confirm, address)){
+
+        }
+        
+
     }
 
     private boolean validate(String user, String email, String pass, String confirm, String address){
         if(user == null || (email == null || (pass == null || (confirm == null || (address == null)))))
             return false;
-        if(!user.matches(".{3,50}")) return true;
+        if(!user.matches("^.{3,50}$")) return false;
         if(!email.matches("^.+@\\w+\\.\\w+$")) return false;
+        if(!pass.matches("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,})")) return false;
+        if(!pass.equals(confirm)) return false;
+        if(!pass.matches(".{8,}")) return false;
 
         return true;
     }
