@@ -57,11 +57,4 @@ public class LoginController extends HttpServlet {
         resp.setStatus(0);
         resp.sendRedirect("/");
     }
-
-    private void setCookie(String name, String value, HttpServletResponse resp){
-        int lifetime = 30 * 24 * 60 * 60;
-        Cookie cookie = new Cookie(name, value);
-        cookie.setMaxAge(lifetime);
-        resp.addCookie(cookie);
-    }
 }

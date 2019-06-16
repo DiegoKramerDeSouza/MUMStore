@@ -33,7 +33,7 @@
         <div class="container">
             <div>
 
-                <form class="form-horizontal" role="form" action="/addUser" method="post">
+                <form class="form-horizontal" role="form" action="#" method="post">
                     <h2>Registration</h2>
                     <div class="form-group">
                         <label for="fullName" class="col-sm-3 control-label">Full Name*</label>
@@ -56,7 +56,7 @@
                     <div class="form-group">
                         <label for="password" class="col-sm-3 control-label">Confirm Password*</label>
                         <div class="col-sm-9">
-                            <input type="password" id="confirmPassword" placeholder="Password" class="form-control" name="confirmpassword">
+                            <input type="password" id="confirmPassword" placeholder="Password" class="form-control" name="confirmPassword">
                             <span id="matching"></span>
                         </div>
                     </div>
