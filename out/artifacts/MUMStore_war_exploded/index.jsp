@@ -12,10 +12,14 @@
     <title>Home</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8fd24b2ea7.js"></script>
+    <script src="resource/script/script.js"></script>
     <link rel="stylesheet" href="resource/style/style.css" />
 
   </head>
@@ -124,100 +128,22 @@
           </a>
         </div>
 
-        <div class="row">
+        <div class="row" id="showData">
+          <div class="display">
 
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top" src="resource/img/products/product1.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item One</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product2.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Two</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                 <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product2.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Three</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product2.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Four</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                 <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product1.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Five</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-                <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="pages/product.jsp"><img class="card-img-top"  src="resource/img/products/product1.jpg" alt=""></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="#">Item Six</a>
-                </h4>
-                <h5>$24.99</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet</p>
-              </div>
-              <div class="card-footer">
-               <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
+            <div class="col-lg-4 col-md-6 mb-4" id="appendData">
+              <div class="card h-100">
+                <a href="pages/product.jsp"><img id="productImage" class="card-img-top" src="resource/img/products/product1.jpg" alt=""></a>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    <a href="#">Item One</a>
+                  </h4>
+                  <h5 id="productPrice">$24.99</h5>
+                  <p class="card-text" id="productDesc">Lorem ipsum dolor sit amet</p>
+                </div>
+                <div class="card-footer">
+                  <a href="pages/checkout.jsp" class="btn btn-success">Add to Cart</a>
+                </div>
               </div>
             </div>
           </div>
