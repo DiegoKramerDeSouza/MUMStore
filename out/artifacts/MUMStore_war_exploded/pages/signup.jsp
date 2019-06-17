@@ -36,6 +36,12 @@
                 <div class="card-body">
                     <form class="form-horizontal" role="form" action="/API/register" method="post">
                         <h2>Registration</h2>
+                        <h4 class="text-danger font-weight-bold">
+                            ${param.E == 1 ? "E-mail already registrated!" : null}
+                        </h4>
+                        <h4 class="text-danger font-weight-bold">
+                            ${param.E == 2 ? "Please enter valid fields values!" : null}
+                        </h4>
                         <div class="form-group">
                             <label for="fullName" class="col-sm-3 control-label">Full Name*</label>
                             <div class="col-sm-9">
@@ -76,7 +82,6 @@
                         <div class="form-group">
                             <div class="col-sm-9 col-sm-offset-3 my-4">
                                 <span class="help-block text-danger">*Required fields</span><br />
-                                <span class="text-danger font-weight-bold">${param.email != null ? "Please enter valid fields values." : null}</span>
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
