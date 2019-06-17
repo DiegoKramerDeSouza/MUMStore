@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 987109
@@ -91,16 +92,38 @@
     </div>
 </div>
 
-<!--Cart Modal Content-->
-<div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+ <!--Cart Modal Content-->
+  <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
     <div class="modal-dialog">
-        <div class="loginmodal-container">
-            <h1><i class="fas fa-shopping-cart"></i> Cart</h1>
+      <div class="modal-content">
+        <h3 ><i class="fas fa-shopping-cart  "></i> Cart</h3>
+        <div class="dropdown-divider"></div>
+
+         <!-- repeat this for each product -->
+            <c:forEach items="${cart}" var="product">
+            <div id="cartshow" class="row ">
+                <div class="col-sm-3">
+                  <img src="<c:url value="${product[3]}"  />"  alt="<c:out value="${product[0]}"  />">
+                </div>
+
+                <div class="col-sm-5">
+                    <h6 class="mt-0"><c:out value="${product[0]}" /></h6>
+
+                </div>
+              <div class="col-sm-4">
+                 <span>Quantity <c:out value="${product[6]}" /></span>
+              </div>
+
+            </div>
+
+            </c:forEach>
             <div class="dropdown-divider"></div>
-            Cart here!
+        <div class="text-center">
+            <a href="/checkout" class="btn btn-success checkoutbtn">Checkout</a>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 <!--Bottom Footer-->
 <footer class="bottom section-padding">
     <div class="container">
