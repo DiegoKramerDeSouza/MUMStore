@@ -1,4 +1,7 @@
 $(function () {
+
+    setTimeout(() => $("#msg-success").slideUp(300), 1500);
+    setTimeout(() => $("#msg-error").slideUp(300), 1500);
     $.get('/API/product', parseData,"json");
 
     function parseData(data) {

@@ -11,13 +11,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/API/register")
 public class registerController extends HttpServlet {
 
     private UserDAO dao;
-    private Gson mapper = new Gson();
     private ServletContext sc;
 
     @Override
@@ -34,18 +34,20 @@ public class registerController extends HttpServlet {
         String pass = req.getParameter("password");
         String confirm = req.getParameter("confirmPassword");
         String address = req.getParameter("address");
+        HttpSession session = req.getSession();
         if(validate(user, email, pass, confirm, address)){
             User me = dao.authenticate(con, email, pass);
             if(me == null){
                 int total = dao.countUsers(con);
                 if(dao.registerUser(con, total ,user, email, pass, address)){
-                    resp.setStatus(2);
-                    resp.sendRedirect("/");
+                    resp.sendRedirect("/?E=0");
                     return;
                 }
             }
+            req.getRequestDispatcher("/pages/signup.jsp?E=1").forward(req, resp);
+            return;
         }
-        req.getRequestDispatcher("/pages/signup.jsp").forward(req, resp);
+        req.getRequestDispatcher("/pages/signup.jsp?E=2").forward(req, resp);
     }
 
     private boolean validate(String user, String email, String pass, String confirm, String address){
