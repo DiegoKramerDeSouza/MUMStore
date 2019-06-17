@@ -185,7 +185,7 @@
       <div class="loginmodal-container">
         <h1><i class="fas fa-shopping-cart"></i> Cart</h1>
         <div class="dropdown-divider"></div>
-        Cart here!
+        ${user==null ? "You must be logged in to view cart": "your cart here"};
       </div>
     </div>
   </div>
