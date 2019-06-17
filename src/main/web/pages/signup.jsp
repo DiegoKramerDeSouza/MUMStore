@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="password" class="col-sm-3 control-label">Address</label>
+                            <label for="password" class="col-sm-3 control-label">Address*</label>
                             <div class="col-sm-9">
                                 <input type="text" id="address" placeholder="address" class="form-control"
                                        name="address" value="${param.address}" required pattern=".{8,}">
@@ -85,10 +85,14 @@
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
-                        <button id="registerbtn" type="submit" class="btn btn-primary btn-block w-75 mx-auto d-block">Register</button>
+                        <button id="registerbtn" type="submit" class="btn btn-success">Register</button>
+                        <input type="reset" class="btn btn-success" value="Clear">
                     </form>
+
                 </div>
             </div>
+            <div class="dropdown-divider"></div>
+
         </div>
 
         <!--Cart Modal Content-->

@@ -60,6 +60,9 @@
         <div class="col-sm-12 card">
             <div class="card-body" id="addClass">
                 <!-- Display block of product-->
+
+
+
             </div>
         </div>
         <%--            End of row div--%>
