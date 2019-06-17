@@ -1,12 +1,11 @@
-$(function () {
+(function(){
+    "use strict";
 
-    function parseData(data) {
-        console.log(data.picture);
-        for(var i=0; i<data.length;i++){
-
-            let content =
-                `<div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card h-100">    
+    $(function () {
+        function parseData(data) {
+            for(var i=0; i<data.length;i++){
+                let content =
+                    `   <div class="card h-100">    
                         <a href="/product?id=${data[i].id}">
                           <p><img id="productImage_${i}" class="card-img-top" src="${data[i].picture}" alt="${data[i].name}"/></p>
                         </a>
@@ -31,19 +30,35 @@ $(function () {
                           <input type="submit"  class="btn btn-success" value="Add to Cart">
                          </form>
                         </div>
-                    </div>
-                   </div>`;
+                    </div>`;
 
+                let child = document.createElement("div");
+                child.setAttribute("class", "col-sm-12 col-md-6 col-lg-4");
+                child.innerHTML = content;
+                $("#appendData").append(child);
 
+            }
+        };
 
-            let div = $("<span>").innerHTML = content;
-            $("#appendData").append(div);
+        // Listener to Product Types
+        Array.prototype.forEach.call($("#theFixed>.list-group-item"), type => {
+            type.onclick = () =>{
+                console.log($(type).attr("data-item"));
+            };
+        });
 
-        }
-    };
+        // Dismiss messages
+        setTimeout(() => $("#msg-success").slideUp(300), 1500);
+        setTimeout(() => $("#msg-error").slideUp(300), 1500);
 
-    setTimeout(() => $("#msg-success").slideUp(300), 1500);
-    setTimeout(() => $("#msg-error").slideUp(300), 1500);
-    $.get('/API/product', parseData,"json");
+        // Initial Products loader
+        $.get('/API/product', parseData,"json")
+                .always(() => {
+                    $("#loader").hide();
+                    $("footer").fadeIn(300);
+                });
+        $("#loader").fadeIn(300);
 
-});
+    });
+})();
+
