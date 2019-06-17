@@ -58,19 +58,15 @@ img.card-img-top{
 .card-body {
     font-size: 10px;
 }
-.carousel-inner{
-    height: 100% !important;
+
+.carousel-item>img{
+    height: 600px !important;
 }
 
 #carouselExampleControls{
-    height: 70% !important;
-    background-color: rgba(52,58,64,0.5);
+
 }
 
-#carouselExampleIndicators{
-    height: 370px !important;
-    background-color: rgba(52,58,64,0.5);
-}
 
 
 /*--Cart--*/

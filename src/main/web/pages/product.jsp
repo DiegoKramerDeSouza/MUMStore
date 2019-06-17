@@ -62,8 +62,6 @@
             <div class="card-body" id="addClass">
                 <!-- Display block of product-->
 
-
-
             </div>
         </div>
         <%--            End of row div--%>
