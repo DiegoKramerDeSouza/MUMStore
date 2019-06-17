@@ -13,7 +13,7 @@ public class    LogoutController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getSession().invalidate();
+
         Cookie cookie = new Cookie("user", null);
         cookie.setMaxAge(0);
         resp.addCookie(cookie);
@@ -26,6 +26,8 @@ public class    LogoutController extends HttpServlet{
         cookie = new Cookie("items", null);
         cookie.setMaxAge(0);
         resp.addCookie(cookie);
+
+        req.getSession().invalidate();
         resp.sendRedirect("/");
     }
 
