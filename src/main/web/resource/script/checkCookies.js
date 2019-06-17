@@ -1,7 +1,6 @@
 $(function () {
 
     let cookies = document.cookie.split("; ");
-    
     if(cookies.length == 3){
         const user = cookies[1].split("=")[1];
         const key = cookies[2].split("=")[1];
