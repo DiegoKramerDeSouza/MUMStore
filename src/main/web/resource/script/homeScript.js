@@ -4,41 +4,39 @@
     $(function () {
         function parseData(data) {
             $("#appendData").empty();
-            console.log(data.length);
             for(var i=0; i<data.length;i++){
                 let content =
-                    `   <div class="card h-100">    
+                    `<div class="card h-100">    
                         <a href="/product?id=${data[i].id}">
-                          <p><img id="productImage_${i}" class="card-img-top" src="${data[i].picture}" alt="${data[i].name}"/></p>
+                          <p><img class="card-img-top" src="${data[i].picture}" alt="${data[i].name}"/></p>
                         </a>
                         <div class="card-body">
-                          <h4 class="card-title">
-                            <a href="#">${data[i].name}</a>
-                          </h4>
-                          <p><h5 id="productPrice">$ ${data[i].price} </h5></p>
-                          <p class="card-text text-truncate" id="productDesc" title="${data[i].description}">
-                            ${data[i].description}
-                          </p>
+                              <h4 class="card-title">
+                                    <a href="#">111 ${data[i].name}</a>
+                              </h4>
+                              <p><h5>$${data[i].price}</h5></p>
+                              <p class="card-text text-truncate" id="productDesc" title="${data[i].description}">
+                                    ${data[i].description}
+                              </p>
                         </div>
                         <div class="card-footer">
-                        <form action="/API/product" method="post">
-                          <input type="hidden" value="1" name="qtd" />
-                          <input type="hidden" value="${data[i].name}" name="name" />
-                          <input type="hidden" value="${data[i].id}" name="id" />
-                          <input type="hidden" value="${data[i].price}" name="price" />
-                          <input type="hidden" value="${data[i].picture}" name="pic" />
-                          <input type="hidden" value="${data[i].description}" name="desc" />
-                          <input type="hidden" value="${data[i].type}" name="type" />
-                          <input type="submit"  class="btn btn-success" value="Add to Cart">
-                         </form>
+                            <form action="/API/product" method="post">
+                                  <input type="hidden" value="1" name="qtd" />
+                                  <input type="hidden" value="${data[i].name}" name="name" />
+                                  <input type="hidden" value="${data[i].id}" name="id" />
+                                  <input type="hidden" value="${data[i].price}" name="price" />
+                                  <input type="hidden" value="${data[i].picture}" name="pic" />
+                                  <input type="hidden" value="${data[i].description}" name="desc" />
+                                  <input type="hidden" value="${data[i].type}" name="type" />
+                                  <input type="submit"  class="btn btn-success" value="Add to Cart" />
+                            </form>
                         </div>
                     </div>`;
 
-                const child = document.createElement("div");
+                let child = document.createElement("div");
                 child.setAttribute("class", "col-sm-12 col-md-6 col-lg-4");
                 child.innerHTML = content;
                 $("#appendData").append(child);
-
             }
         };
 
