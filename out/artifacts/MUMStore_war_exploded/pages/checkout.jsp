@@ -19,6 +19,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8fd24b2ea7.js"></script>
+    <script src="../resource/script/checkoutScript.js"></script>
 </head>
 <body class="bg-light">
 <nav class="navbar navbar-light bg-dark justify-content-between">
@@ -43,19 +44,13 @@
         <div class="card-body">
             <h1 class="card-title">Checkout</h1>
             <div class="dropdown-divider"></div>
-        <%--For message--%>
-            <div id="msg-success" class="card bg-success text-light custom-msg ${param.E != 10 ? "dnone" : null}">
-                <div class="card-body">
-                    <h4><i class="fas fa-check"></i> Thank you for shopping with us!</h4>
-                </div>
-            </div>
 
             <!-- repeat this for each product -->
 
             <c:forEach items="${cart}" var="product">
                 <div class="media">
                     <img class="align-self-center mr-3 thumb" src="<c:url value="${product[3]}" />" alt="<c:out value="${product[0]}" />">
-                    <div class="media-body text-truncate" >
+                    <div class="media-body text-truncate my-4" >
                         <h5 class="mt-0"><c:out value="${product[0]}" /></h5>
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                         <div class="text-right">
@@ -65,8 +60,8 @@
                                 <input type="submit" class="btn btn-sm btn-outline-danger" value="Remove" />
                             </form>
                         </div>
-                        <div class="dropdown-divider"></div>
                         <c:out value="${product[4]}" />
+                        <div class="dropdown-divider"></div>
                         <div class="text-right">
                             <span>Price: $<c:out value="${product[2]}" /></span><br />
                             <span>Quantity <strong><c:out value="${product[6]}" /></strong></span>
@@ -132,6 +127,14 @@
         </div>
     </div>
 </div>
+
+<%--For message--%>
+<div id="msg-success" class="card bg-success text-light custom-msg ${param.E == 10 ? null : "dnone"}">
+    <div class="card-body">
+        <h4><i class="far fa-laugh-beam"></i> Thank you for shopping with us!</h4>
+    </div>
+</div>
+
 <!--Bottom Footer-->
 <footer class="bottom section-padding">
     <div class="container">

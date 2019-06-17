@@ -8,14 +8,14 @@
                 let content =
                     `<div class="card custom-card">    
                         <a href="/product?id=${data[i].id}">
-                          <p><img class="card-img-top" src="${data[i].picture}" alt="${data[i].name}"/></p>
+                          <img class="card-img-top" src="${data[i].picture}" alt="${data[i].name}"/>
                         </a>
-                        <div class="card-body">
+                        <div class="card-body text-truncate">
                               <h4 class="card-title">
-                                    <a href="#">${data[i].name}</a>
+                                    <a href="/product?id=${data[i].id}" title="${data[i].name}">${data[i].name}</a>
                               </h4>
                               <p><h5>$${data[i].price}</h5></p>
-                              <p class="card-text text-truncate" id="productDesc" title="${data[i].description}">
+                              <p class="card-text" id="productDesc" title="${data[i].description}">
                                     ${data[i].description}
                               </p>
                         </div>
