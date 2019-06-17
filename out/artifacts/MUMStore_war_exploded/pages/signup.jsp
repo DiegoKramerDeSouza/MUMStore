@@ -101,5 +101,19 @@
                 </div>
             </div>
         </div>
+        <!--Bottom Footer-->
+        <footer class="bottom section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="copyright">
+                            <p>&copy <span>2019</span> <a href="#" class="transition">MUM STORE</a> All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Bottom Footer-->
     </body>
+
 </html>

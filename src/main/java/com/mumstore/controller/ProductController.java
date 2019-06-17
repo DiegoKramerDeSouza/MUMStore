@@ -69,7 +69,7 @@ public class ProductController extends HttpServlet {
         HttpSession session = req.getSession();
         String email = (String) session.getAttribute("user");
         List<String> product = Arrays.asList(name, id, price, pic, desc, type, qtd);
-        if(dao.addToCart(con, product, email)){
+        if(dao.addToCart(con, product, email) && email != null){
             String[] list = {name, id, price, pic, desc, type, qtd};
             List<String[]> items = (List<String[]>) session.getAttribute("cart");
             items.add(list);

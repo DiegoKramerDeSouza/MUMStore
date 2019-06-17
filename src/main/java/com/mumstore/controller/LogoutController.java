@@ -9,12 +9,18 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/logout")
-public class LogoutController extends HttpServlet{
+public class    LogoutController extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getSession().invalidate();
         Cookie cookie = new Cookie("user", null);
+        cookie.setMaxAge(0);
+        resp.addCookie(cookie);
+        cookie = new Cookie("mail", null);
+        cookie.setMaxAge(0);
+        resp.addCookie(cookie);
+        cookie = new Cookie("holder", null);
         cookie.setMaxAge(0);
         resp.addCookie(cookie);
         resp.sendRedirect("/");

@@ -17,7 +17,7 @@ public class UserDAO {
 
     Gson mapper = new Gson();
 
-    public User authenticate(MongoDatabase con, String login, String pass){
+    public User authenticate(MongoDatabase con, String login){
 
         User user;
         BasicDBObject query = new BasicDBObject();

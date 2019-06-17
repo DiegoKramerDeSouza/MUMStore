@@ -66,7 +66,7 @@
 
             <div class="dropdown-divider"></div>
             <div class="total text-right">
-                <strong>Total:$${total}</strong><br />
+                <strong>Total: $${total}</strong><br />
             </div>
 
             <!--Cart Modal Content-->
@@ -80,14 +80,13 @@
                 </div>
             </div>
 
-            <!--Login Modal Content-->
+            <!--ogin Modal Content-->
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
                 <div class="modal-dialog" role="document">
                     <div class="modal-content loginmodal-container">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-
                         </div>
                         <div class="modal-body">
                             <form action="/auth" method="post">
@@ -109,5 +108,18 @@
         </div>
     </div>
 </div>
+<!--Bottom Footer-->
+<footer class="bottom section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="copyright">
+                    <p>&copy <span>2019</span> <a href="#" class="transition">MUM STORE</a> All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--Bottom Footer-->
 </body>
 </html>
