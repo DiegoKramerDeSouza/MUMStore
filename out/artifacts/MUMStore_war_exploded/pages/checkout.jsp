@@ -51,8 +51,13 @@
                         <h5 class="mt-0"><c:out value="${product[0]}" /></h5>
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                         <div class="text-right">
-                            <span>Quantity <c:out value="${product[6]}" /></span>
-                            <span><i class="far fa-trash-alt"></i></span>
+                            <form action="/API/product" method="post">
+                                <span>Quantity <c:out value="${product[6]}" /></span>
+                                <input type="hidden" name="id" value="${product[1]}">
+                                <input type="hidden" name="qtd" value="${product[6]}">
+                                <input type="hidden" name="remove" value="remove">
+                                <input type="submit" class="btn btn-sm btn-outline-danger" value="Remove" />
+                            </form>
                         </div>
                         <div class="dropdown-divider"></div>
                         <c:out value="${product[4]}" />

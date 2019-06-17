@@ -33,15 +33,11 @@ public class LoginController extends HttpServlet {
         String key = req.getParameter("key");
         String email = req.getParameter("user");
         if(key != null){
-            System.out.println("--->" + key);
             MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
             User me = dao.authenticate(con, email);
             HttpSession session = req.getSession();
-            System.out.println("--->" + me);
             if(me != null){
-
                 String item = me.getKey() + "";
-                System.out.println("--->" + item.equals(key));
                 if(item.equals(key)){
                     prepareSession(resp, session, me, email);
                     return;

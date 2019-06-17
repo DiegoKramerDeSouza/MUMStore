@@ -12,6 +12,7 @@ import org.bson.Document;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProductDAO {
 
@@ -63,6 +64,40 @@ public class ProductDAO {
             Document update = new Document();
             update.put("$push", cart);
             coll.updateOne(document, update);
+
+        }catch(MongoClientException e){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean removeFromCart(MongoDatabase con, List<String[]> products, String email){
+
+        MongoCollection<Document> coll = con.getCollection("user");
+        try{
+            Document doc = new Document();
+            doc.put("email", email);
+            Document empty = new Document();
+            empty.put("cart", "");
+            Document update = new Document();
+            update.put("$unset", empty);
+            coll.updateOne(doc, update);
+
+            Document newDoc = new Document();
+            newDoc.put("email", email);
+            Document newCart = new Document();
+            newCart.put("cart", Arrays.asList());
+            Document docSet = new Document();
+            docSet.put("$set", newCart);
+            coll.updateOne(newDoc, docSet);
+
+            Document push = new Document();
+            Document items = new Document();
+            products.forEach(item ->{
+                items.put("cart", Arrays.asList(item));
+                push.put("$push", items);
+                coll.updateMany(doc, push);
+            });
 
         }catch(MongoClientException e){
             return false;
