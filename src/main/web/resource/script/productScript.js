@@ -7,7 +7,7 @@
             let url = new URL(urlpath);
             let id = url.searchParams.get("id");
             console.log(id);
-            $.get('/API/product?id=' + id,showImage,"json");
+            $.get('/API/product', {"id": id}, showImage, "json");
         }
 
         function showImage(data) {
@@ -18,7 +18,7 @@
                              <h1>${data[0].name}</h1>
                              <h3>Price: $ ${data[0].price}</h3>
                             <div class="col-xs-9">
-                                <h3>Product Description:</h3>
+                                <h3>Description:</h3>
                                 <p class="card-text">
                                      ${data[0].description}
                                 </p>

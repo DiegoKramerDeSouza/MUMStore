@@ -10,6 +10,10 @@ form>li{
     list-style: none;
 }
 
+.emptyCart{
+    opacity: 0.5;
+}
+
 .navbar-light .navbar-brand {
     color: white !important;
     font-size: 22px !important;

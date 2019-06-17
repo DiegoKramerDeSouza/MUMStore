@@ -11,6 +11,10 @@
     font-size: inherit !important;
 }
 
+#checkoutbtn{
+    width: 80%;
+}
+
 footer{
     position: fixed;
     bottom: 0px;

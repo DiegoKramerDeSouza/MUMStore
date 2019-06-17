@@ -34,7 +34,7 @@
     <div class="" id="smallbar">
       <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
         <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
-          <i class="fas fa-shopping-cart"></i> Cart
+          <i class="fas fa-shopping-cart"></i> Cart (${items > 0 ? items : 0})
         </a> &nbsp;
         <a href="/signup" class="btn btn-success my-2 my-sm-0 btn-sm" >
           <i class="fas fa-sign-in-alt"></i> Signup
@@ -49,7 +49,7 @@
             <i class="fas fa-user-circle"></i> ${cookie.user.value}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a data-toggle="modal" data-target="#cart-modal" class="dropdown-item" ><i class="fas fa-shopping-cart"></i> Cart</a>
+            <a data-toggle="modal" data-target="#cart-modal" class="dropdown-item" ><i class="fas fa-shopping-cart"></i> Cart (${items > 0 ? items : 0})</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> logout</a>
           </div>
@@ -98,6 +98,7 @@
 
 
         <div class="list-group" id="theFixed">
+          <a data-item="all" class="list-group-item"><i class="fas fa-cubes"></i> All</a>
           <a data-item="notebook" class="list-group-item"><i class="fas fa-laptop"></i> Notebook</a>
           <a data-item="smartphone" class="list-group-item"><i class="fas fa-mobile-alt"></i> Smartphone</a>
           <a data-item="accessories" class="list-group-item"><i class="fas fa-headphones-alt"></i> Accessories</a>
@@ -183,32 +184,34 @@
 
   <!--Cart Modal Content-->
   <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <h3 ><i class="fas fa-shopping-cart  "></i> Cart</h3>
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content card-body text-left">
+        <h3><i class="fas fa-shopping-cart"></i> Cart (${items > 0 ? items : 0})</h3>
         <div class="dropdown-divider"></div>
 
-         <!-- repeat this for each product -->
-            <c:forEach items="${cart}" var="product">
-            <div id="cartshow" class="row ">
-                <div class="col-sm-3">
-                  <img src="<c:url value="${product[3]}"  />"  alt="<c:out value="${product[0]}"  />">
-                </div>
-
-                <div class="col-sm-5">
-                    <h6 class="mt-0"><c:out value="${product[0]}" /></h6>
-
-                </div>
-              <div class="col-sm-4">
-                 <span>Quantity <c:out value="${product[6]}" /></span>
-              </div>
-
+        <!-- repeat this for each product -->
+        <c:forEach items="${cart}" var="product">
+          <div id="cartshow" class="row">
+            <div class="col-sm-3 text-right">
+              <img src="<c:url value="${product[3]}"  />"  alt="<c:out value="${product[0]}" />">
             </div>
+            <div class="col-sm-5">
+              <h6 class="mt-0"><c:out value="${product[0]}" /></h6>
+            </div>
+            <div class="col-sm-4 text-left">
+              <span>Quantity <strong><c:out value="${product[6]}" /></strong></span>
+            </div>
+          </div>
+        </c:forEach>
 
-            </c:forEach>
-            <div class="dropdown-divider"></div>
-        <div class="text-center">
-            <a href="/checkout" class="btn btn-success checkoutbtn">Checkout</a>
+        <div class="my-4 text-center emptyCart ${items > 0 ? "dnone" : null}">
+          <h3><i class="far fa-frown fa-lg"></i></h3>
+          <h3>Your cart is empty!</h3>
+        </div>
+
+        <div class="dropdown-divider"></div>
+        <div class="text-right">
+          <a href="/checkout" class="btn btn-danger checkoutbtn">Checkout</a>
         </div>
       </div>
     </div>

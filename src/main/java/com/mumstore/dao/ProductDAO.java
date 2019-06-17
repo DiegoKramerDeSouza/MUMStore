@@ -75,6 +75,27 @@ public class ProductDAO {
 
         MongoCollection<Document> coll = con.getCollection("user");
         try{
+            removeAllFromCart(con, email);
+            Document push = new Document();
+            Document items = new Document();
+            Document doc = new Document();
+            doc.put("email", email);
+            products.forEach(item ->{
+                items.put("cart", Arrays.asList(item));
+                push.put("$push", items);
+                coll.updateMany(doc, push);
+            });
+
+        }catch(MongoClientException e){
+            return false;
+        }
+        return true;
+    }
+
+    public boolean removeAllFromCart(MongoDatabase con, String email){
+
+        MongoCollection<Document> coll = con.getCollection("user");
+        try{
             Document doc = new Document();
             doc.put("email", email);
             Document empty = new Document();
@@ -90,14 +111,6 @@ public class ProductDAO {
             Document docSet = new Document();
             docSet.put("$set", newCart);
             coll.updateOne(newDoc, docSet);
-
-            Document push = new Document();
-            Document items = new Document();
-            products.forEach(item ->{
-                items.put("cart", Arrays.asList(item));
-                push.put("$push", items);
-                coll.updateMany(doc, push);
-            });
 
         }catch(MongoClientException e){
             return false;
