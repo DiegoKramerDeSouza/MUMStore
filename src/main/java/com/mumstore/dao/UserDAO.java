@@ -2,6 +2,7 @@ package com.mumstore.dao;
 
 import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
+import com.mongodb.MongoClientException;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
@@ -35,5 +36,36 @@ public class UserDAO {
         }
 
         return null;
+    }
+
+    public int countUsers(MongoDatabase con){
+
+        MongoCollection<Document> coll = con.getCollection("user");
+        MongoCursor cursor = coll.find().iterator();
+        int count = 0;
+        while (cursor.hasNext()){
+            count++;
+            cursor.next();
+        }
+        return count;
+    }
+
+    public Boolean registerUser(MongoDatabase con, int total, String user, String email, String pass, String address){
+
+        MongoCollection<Document> coll = con.getCollection("user");
+        try{
+            Document document = new Document();
+            document.put("id", (total + 1));
+            document.put("name", user);
+            document.put("email", email);
+            document.put("password", pass);
+            document.put("address", address);
+            List<Document> cart = new ArrayList<>();
+            document.put("cart", cart);
+            coll.insertOne(document);
+        }catch(MongoClientException e){
+            return false;
+        }
+        return true;
     }
 }

@@ -1,21 +1,17 @@
-
-$(window).scroll(function() {
-    $("#theFixed").css("top", Math.max(0, 850 - $(this).scrollTop()));
-
-
-});
-
 $(function () {
-        $.get('/API/product', parseData,"json");
+
+    setTimeout(() => $("#msg-success").slideUp(300), 1500);
+    setTimeout(() => $("#msg-error").slideUp(300), 1500);
+    $.get('/API/product', parseData,"json");
 
     function parseData(data) {
         console.log(data.picture);
         for(var i=0; i<data.length;i++){
-           console.log(data[i].price);
+            console.log(data[i].price);
             //console.log(data[i].picture);
 
-             let content =
-                 `<div class="col-sm-12 col-md-6 col-lg-4">
+            let content =
+                `<div class="col-sm-12 col-md-6 col-lg-4">
                     <div class="card h-100">    
                         <a href="/product?id=${data[i].id}">
                           <p><img id="productImage_${i}" class="card-img-top" src="${data[i].picture}" alt="${data[i].name}"/></p>

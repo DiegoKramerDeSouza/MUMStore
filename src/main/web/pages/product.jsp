@@ -58,21 +58,7 @@
                     </div>
 
                                 <!-- Add to cart button -->
-                    <div class="blockinline">
-                        <div class="section">
-                            <h6 class="title-attr">Quantity</h6>
-                            <div class="btnclass">
-                                <div class="btn-minus"><span class="glyphicon glyphicon-minus"><input type="button" value="-"></span></div>
-                                <input value="1" />
-                                <div class="btn-plus">
-                                    <span class="glyphicon glyphicon-plus">
-                                        <input type="button" value="+"/>
-                                    </span>
-                                </div>
 
-                            </div>
-                        </div>
-                    </div>
                 </div>
 <%--            End of row div--%>
             </div>

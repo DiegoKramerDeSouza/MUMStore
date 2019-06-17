@@ -22,7 +22,11 @@
     <script src="https://kit.fontawesome.com/8fd24b2ea7.js"></script>
     <script src="resource/script/script.js"></script>
 
+
+    <script src="resource/script/homeScript.js"></script>
+
     <link rel="stylesheet" href="resource/style/style.css" />
+    <link rel="stylesheet" href="resource/style/homepageStyle.css" />
 
   </head>
   <body class="bg-light">
@@ -186,6 +190,19 @@
         <div class="dropdown-divider"></div>
         Cart here!
       </div>
+    </div>
+  </div>
+
+  <!-- Messages -->
+  <div id="msg-success" class="card bg-success text-light custom-msg ${param.E != 0 ? "dnone" : null}">
+    <div class="card-body">
+      <h4><i class="fas fa-check"></i> User registred Successfully!</h4>
+    </div>
+  </div>
+
+  <div id="msg-error" class="card bg-danger text-light custom-msg ${param.E == 10 ? null : "dnone"}">
+    <div class="card-body">
+      <h4><i class="fas fa-times"></i> User or Password incorrect!</h4>
     </div>
   </div>
 

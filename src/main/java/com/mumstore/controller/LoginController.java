@@ -31,37 +31,26 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
-        String user = req.getParameter("user");
+        String email = req.getParameter("user");
         String pass = req.getParameter("pass");
-        User me = dao.authenticate(con, user, pass);
-
+        User me = dao.authenticate(con, email, pass);
+        HttpSession session = req.getSession();
         if(me != null){
-            if(me.validate(user, pass)){
-                HttpSession session = req.getSession();
+            if(me.validate(email, pass)){
                 session.setMaxInactiveInterval(60 * 60);
                 me.setTotal();
-
-                //System.out.println(mapper.toJson(me.getCart()));
-                session.setAttribute("user", user);
+                session.setAttribute("user", email);
+                session.setAttribute("address", me.getAddress());
                 session.setAttribute("cart", me.getCart());
                 session.setAttribute("total", me.getTotal());
 
                 Cookie cookie = new Cookie("user", me.getName());
                 cookie.setMaxAge(maxAge);
                 resp.addCookie(cookie);
-                resp.setStatus(1);
                 resp.sendRedirect("/");
                 return;
             }
         }
-        resp.setStatus(0);
-        resp.sendRedirect("/");
-    }
-
-    private void setCookie(String name, String value, HttpServletResponse resp){
-        int lifetime = 30 * 24 * 60 * 60;
-        Cookie cookie = new Cookie(name, value);
-        cookie.setMaxAge(lifetime);
-        resp.addCookie(cookie);
+        resp.sendRedirect("/?E=10");
     }
 }
