@@ -43,11 +43,19 @@
         <div class="card-body">
             <h1 class="card-title">Checkout</h1>
             <div class="dropdown-divider"></div>
+        <%--For message--%>
+            <div id="msg-success" class="card bg-success text-light custom-msg ${param.E != 10 ? "dnone" : null}">
+                <div class="card-body">
+                    <h4><i class="fas fa-check"></i> Thank you for shopping with us!</h4>
+                </div>
+            </div>
+
             <!-- repeat this for each product -->
+
             <c:forEach items="${cart}" var="product">
                 <div class="media">
                     <img class="align-self-center mr-3 thumb" src="<c:url value="${product[3]}" />" alt="<c:out value="${product[0]}" />">
-                    <div class="media-body">
+                    <div class="media-body text-truncate" >
                         <h5 class="mt-0"><c:out value="${product[0]}" /></h5>
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                         <div class="text-right">
