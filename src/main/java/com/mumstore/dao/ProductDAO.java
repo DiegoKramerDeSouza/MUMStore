@@ -2,6 +2,7 @@ package com.mumstore.dao;
 
 import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
+import com.mongodb.MongoClientException;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoCursor;
 import com.mongodb.client.MongoDatabase;
@@ -9,6 +10,7 @@ import com.mumstore.model.Product;
 import org.bson.Document;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ProductDAO {
@@ -46,5 +48,25 @@ public class ProductDAO {
         }
         return products;
 
+    }
+
+    public boolean addToCart(MongoDatabase con, List<String> product, String email){
+
+        MongoCollection<Document> coll = con.getCollection("user");
+        try{
+            Document document = new Document();
+            document.put("email", email);
+
+            Document cart = new Document();
+            cart.put("cart", product);
+
+            Document update = new Document();
+            update.put("$push", cart);
+            coll.updateOne(document, update);
+
+        }catch(MongoClientException e){
+            return false;
+        }
+        return true;
     }
 }

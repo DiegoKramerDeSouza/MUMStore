@@ -31,18 +31,17 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
-        String user = req.getParameter("user");
+        String email = req.getParameter("user");
         String pass = req.getParameter("pass");
-        User me = dao.authenticate(con, user, pass);
+        User me = dao.authenticate(con, email, pass);
 
         if(me != null){
-            if(me.validate(user, pass)){
+            if(me.validate(email, pass)){
                 HttpSession session = req.getSession();
                 session.setMaxInactiveInterval(60 * 60);
                 me.setTotal();
-
-                //System.out.println(mapper.toJson(me.getCart()));
-                session.setAttribute("user", user);
+                session.setAttribute("user", email);
+                session.setAttribute("address", me.getAddress());
                 session.setAttribute("cart", me.getCart());
                 session.setAttribute("total", me.getTotal());
 
