@@ -59,14 +59,32 @@ img.card-img-top{
 }
 
 
+/*--Cart--*/
 
+#cart-modal img{
+    height: 30px;
+}
+
+
+
+#cart-modal h3{
+    text-align: center;
+
+}
+.checkoutbtn{
+    padding:5px;
+
+
+}
+
+#cart-modal #cartshow{
+    padding:5px;
+    margin-left: 5px;
+}
 
 
 
 /****** LOGIN MODAL ******/
-
-
-
 .loginmodal-container {
   padding: 30px;
   max-width: 350px;

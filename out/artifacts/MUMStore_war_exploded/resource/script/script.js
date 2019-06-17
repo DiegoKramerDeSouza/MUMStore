@@ -1,9 +1,23 @@
 
 $(window).scroll(function() {
+
+
     $("#theFixed").css("top", Math.max(0, 850 - $(this).scrollTop()));
 
 
 });
+
+$(document).ready(function(){
+
+    $("#theFixed").css("top", Math.max(0, 850 - $(this).scrollTop()));
+
+});
+
+
+
+
+
+
 
 $(function () {
         $.get('/API/product', parseData,"json");
@@ -42,5 +56,7 @@ $(function () {
 
         }
     };
+
+    $("#theFixed").css("top", Math.max(0, 850 - $(this).scrollTop()));
 
 });

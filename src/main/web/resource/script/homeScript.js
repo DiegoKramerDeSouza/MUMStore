@@ -26,7 +26,16 @@ $(function () {
                           </p>
                         </div>
                         <div class="card-footer">
-                          <a href="/checkout?id=${data[i].id}" class="btn btn-success">Add to Cart</a>
+                        <form action="/API/product" method="post">
+                          <input type="hidden" value="1" name="qtd" />
+                          <input type="hidden" value="${data[0].name}" name="name" />
+                          <input type="hidden" value="${data[0].id}" name="id" />
+                          <input type="hidden" value="${data[0].price}" name="price" />
+                          <input type="hidden" value="${data[0].picture}" name="pic" />
+                          <input type="hidden" value="${data[0].description}" name="desc" />
+                          <input type="hidden" value="${data[0].type}" name="type" />
+                          <input type="submit"  class="btn btn-success" value="Add to Cart">
+                         </form>
                         </div>
                     </div>
                    </div>`;
