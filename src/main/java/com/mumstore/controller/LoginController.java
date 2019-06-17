@@ -70,6 +70,7 @@ public class LoginController extends HttpServlet {
         session.setAttribute("user", email);
         session.setAttribute("address", me.getAddress());
         session.setAttribute("cart", me.getCart());
+        session.setAttribute("items", me.getCart().size());
         session.setAttribute("total", me.getTotal());
 
         Cookie cookie = new Cookie("user", me.getName());
@@ -79,6 +80,9 @@ public class LoginController extends HttpServlet {
         cookie.setMaxAge(maxAge);
         resp.addCookie(cookie);
         cookie = new Cookie("holder", me.getKey() + "");
+        cookie.setMaxAge(maxAge);
+        resp.addCookie(cookie);
+        cookie = new Cookie("items", me.getCart().size() + "");
         cookie.setMaxAge(maxAge);
         resp.addCookie(cookie);
         resp.sendRedirect("/");
