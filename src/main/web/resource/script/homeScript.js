@@ -27,8 +27,7 @@ $(function () {
                         </div>
                         <div class="blockinline">
                                 <div class="dropdown-divider"></div>
-                                <div class="section float-right">
-                                    <h6 class="title-attr">Quantity:</h6>
+                                <div class="section text-center">
                                     <div class="btnclass">
                                         <form action="/API/product" method="post">
                                             <input type="hidden" value="1" name="qtd" />
