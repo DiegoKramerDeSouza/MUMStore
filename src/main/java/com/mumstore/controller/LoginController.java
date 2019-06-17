@@ -34,10 +34,9 @@ public class LoginController extends HttpServlet {
         String email = req.getParameter("user");
         String pass = req.getParameter("pass");
         User me = dao.authenticate(con, email, pass);
-
+        HttpSession session = req.getSession();
         if(me != null){
             if(me.validate(email, pass)){
-                HttpSession session = req.getSession();
                 session.setMaxInactiveInterval(60 * 60);
                 me.setTotal();
                 session.setAttribute("user", email);
@@ -48,12 +47,10 @@ public class LoginController extends HttpServlet {
                 Cookie cookie = new Cookie("user", me.getName());
                 cookie.setMaxAge(maxAge);
                 resp.addCookie(cookie);
-                resp.setStatus(1);
                 resp.sendRedirect("/");
                 return;
             }
         }
-        resp.setStatus(0);
-        resp.sendRedirect("/");
+        resp.sendRedirect("/?E=10");
     }
 }

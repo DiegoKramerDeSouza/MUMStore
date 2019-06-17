@@ -1,6 +1,7 @@
 package com.mumstore.controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoDatabase;
 import com.mumstore.dao.ProductDAO;
@@ -75,11 +76,12 @@ public class ProductController extends HttpServlet {
             Double total = items.stream().mapToDouble(item -> Double.parseDouble(item[2]) * Double.parseDouble(item[6])).sum();
             session.setAttribute("cart", items);
             session.setAttribute("total", total);
-            resp.setStatus(1);
-            resp.sendRedirect("/checkout");
+
+            resp.sendRedirect("/checkout?E=0");
             return;
         }
-        resp.setStatus(0);
-        resp.sendRedirect("/product?id=" + id);
+        resp.sendRedirect("/product?id=" + id + "&E=1");
+
+
     }
 }
