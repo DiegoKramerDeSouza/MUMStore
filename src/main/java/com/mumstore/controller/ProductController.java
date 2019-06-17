@@ -68,16 +68,25 @@ public class ProductController extends HttpServlet {
         String email = (String) session.getAttribute("user");
 
         if(req.getParameter("remove") != null){
+            // Remove a product from cart
             List<String[]> items = (List<String[]>) session.getAttribute("cart");
             List<String[]> newItems = items.stream().filter(item -> !item[7].equals(id))
                                         .collect(Collectors.toList());
-            System.out.println(newItems);
             setAttributes(newItems, session);
             dao.removeFromCart(con, newItems, email);
             resp.sendRedirect("/checkout?E=0");
             return;
+
+        } else if(req.getParameter("checkout") != null){
+            // Remove all products from cart
+            List<String[]> items = Arrays.asList();
+            setAttributes(items, session);
+            dao.removeAllFromCart(con, email);
+            resp.sendRedirect("/checkout?E=10");
+            return;
         }
 
+        // Add products to cart
         String name = req.getParameter("name");
         String price = req.getParameter("price");
         String pic = req.getParameter("pic");
@@ -104,5 +113,12 @@ public class ProductController extends HttpServlet {
         Double total = items.stream().mapToDouble(item -> Double.parseDouble(item[2]) * Double.parseDouble(item[6])).sum();
         session.setAttribute("cart", items);
         session.setAttribute("total", total);
+        session.setAttribute("items", items.size());
+    }
+
+    private void emptyCart(List<String[]> items, HttpSession session){
+        session.setAttribute("cart", items);
+        session.setAttribute("total", 0.0);
+        session.setAttribute("items", 0);
     }
 }

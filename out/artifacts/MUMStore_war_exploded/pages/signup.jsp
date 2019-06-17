@@ -18,18 +18,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/8fd24b2ea7.js"></script>
         <script src="../resource/script/signupScript.js" crossorigin="anonymous"></script>
+        ${user != null ? null : "<script src='resource/script/checkCookies.js'></script>"}
 
     </head>
     <body class="bg-light">
         <nav class="navbar navbar-light bg-dark justify-content-between">
             <a class="navbar-brand" href="/">MUM STORE</a>
-            <div class="" id="smallbar">
-                <form class="form-inline my-2 my-lg-0 mr-auto">
-                    <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
-                        <i class="fas fa-shopping-cart"></i> Cart
-                    </a> &nbsp;
-                </form>
-            </div>
         </nav>
         <div class="container">
             <div class="card my-4">
@@ -91,16 +85,6 @@
             </div>
         </div>
 
-        <!--Cart Modal Content-->
-        <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-            <div class="modal-dialog">
-                <div class="loginmodal-container">
-                    <h1><i class="fas fa-shopping-cart"></i> Cart</h1>
-                    <div class="dropdown-divider"></div>
-                    Cart here!
-                </div>
-            </div>
-        </div>
         <!--Bottom Footer-->
         <footer class="bottom section-padding">
             <div class="container">

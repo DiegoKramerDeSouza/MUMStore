@@ -36,6 +36,12 @@ h3{
 .card-body{
     font-size: inherit;
 }
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
 /*.blockinline{*/
 /*    position: fixed;*/
 /*    top: 450px;*/

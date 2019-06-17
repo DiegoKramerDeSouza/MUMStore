@@ -32,7 +32,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" data-toggle="modal" data-target="#cart-modal" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    <a class="dropdown-item logout" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
             </li>
         </form>
@@ -42,9 +42,9 @@
     <div class="card my-4">
         <div class="card-body">
             <h1 class="card-title">Checkout</h1>
+            <div class="dropdown-divider"></div>
             <!-- repeat this for each product -->
             <c:forEach items="${cart}" var="product">
-
                 <div class="media">
                     <img class="align-self-center mr-3 thumb" src="<c:url value="${product[3]}" />" alt="<c:out value="${product[0]}" />">
                     <div class="media-body">
@@ -52,7 +52,6 @@
                         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
                         <div class="text-right">
                             <form action="/API/product" method="post">
-                                <span>Quantity <c:out value="${product[6]}" /></span>
                                 <input type="hidden" name="id" value="${product[7]}">
                                 <input type="hidden" name="remove" value="remove">
                                 <input type="submit" class="btn btn-sm btn-outline-danger" value="Remove" />
@@ -61,72 +60,63 @@
                         <div class="dropdown-divider"></div>
                         <c:out value="${product[4]}" />
                         <div class="text-right">
-                            <span>Price: $<c:out value="${product[2]}" /></span>
+                            <span>Price: $<c:out value="${product[2]}" /></span><br />
+                            <span>Quantity <strong><c:out value="${product[6]}" /></strong></span>
                         </div>
                     </div>
                 </div>
-
             </c:forEach>
-
-            <div class="dropdown-divider"></div>
-            <div class="total text-right">
-                <strong>Total: $${total}</strong><br />
+            <div class="my-4 text-center ${items > 0 ? "dnone" : null}">
+                <h1><i class="far fa-frown fa-lg"></i></h1>
+                <h2>Your cart is empty!</h2>
             </div>
 
-           <!--Cart Modal Content-->
-  <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <h3 ><i class="fas fa-shopping-cart  "></i> Cart</h3>
-        <div class="dropdown-divider"></div>
-
-         <!-- repeat this for each product -->
-            <c:forEach items="${cart}" var="product">
-            <div id="cartshow" class="row ">
-                <div class="col-sm-3">
-                  <img src="<c:url value="${product[3]}"  />"  alt="<c:out value="${product[0]}"  />">
+            <div class="${items > 0 ? null : "dnone"}">
+                <div class="dropdown-divider"></div>
+                <div class="total text-right">
+                    <strong>Total: $${total}</strong><br />
                 </div>
-
-                <div class="col-sm-5">
-                    <h6 class="mt-0"><c:out value="${product[0]}" /></h6>
-
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <form action="/API/product" method="post">
+                            <input type="hidden" name="checkout" value="true" />
+                            <input type="submit" id="checkoutbtn" class="btn btn-lg btn-danger" value="Checkout" />
+                        </form>
+                    </div>
                 </div>
-              <div class="col-sm-4">
-                 <span>Quantity <c:out value="${product[6]}" /></span>
-              </div>
-
             </div>
 
-            </c:forEach>
-            <div class="dropdown-divider"></div>
-        <div class="text-center">
-            <a href="/checkout" class="btn btn-success checkoutbtn">Checkout</a>
-        </div>
-      </div>
-    </div>
-  </div>
+            <!--Cart Modal Content-->
+            <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content card-body text-left">
+                        <h3><i class="fas fa-shopping-cart"></i> Cart (${items > 0 ? items : 0})</h3>
+                        <div class="dropdown-divider"></div>
 
-            <!--ogin Modal Content-->
-            <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content loginmodal-container">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                        </div>
-                        <div class="modal-body">
-                            <form action="/auth" method="post">
-                                <input type="text" name="user" placeholder="Username">
-                                <input type="password" name="pass" placeholder="Password">
-                                <div class="dropdown-divider"></div>
-                                <input type="submit" name="login" class="login btn btn-success" value="Login">
-
-                            </form>
-                            <div class="login-help">
-                                <label>Please click  </label><a href="pages/signup.jsp"></a> Register<span> If you dont have an Account.</span>
+                        <!-- repeat this for each product -->
+                        <c:forEach items="${cart}" var="product">
+                            <div id="cartshow" class="row">
+                                <div class="col-sm-3 text-right">
+                                    <img src="<c:url value="${product[3]}"  />"  alt="<c:out value="${product[0]}" />">
+                                </div>
+                                <div class="col-sm-5">
+                                    <h6 class="mt-0"><c:out value="${product[0]}" /></h6>
+                                </div>
+                                <div class="col-sm-4 text-left">
+                                    <span>Quantity <strong><c:out value="${product[6]}" /></strong></span>
+                                </div>
                             </div>
+                        </c:forEach>
+
+                        <div class="my-4 text-center emptyCart ${items > 0 ? "dnone" : null}">
+                            <h3><i class="far fa-frown fa-lg"></i></h3>
+                            <h3>Your cart is empty!</h3>
                         </div>
 
+                        <div class="dropdown-divider"></div>
+                        <div class="text-right">
+                            <a href="/checkout" class="btn btn-danger checkoutbtn">Checkout</a>
+                        </div>
                     </div>
                 </div>
             </div>

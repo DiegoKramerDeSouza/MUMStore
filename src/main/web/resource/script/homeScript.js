@@ -3,6 +3,8 @@
 
     $(function () {
         function parseData(data) {
+            $("#appendData").empty();
+            console.log(data.length);
             for(var i=0; i<data.length;i++){
                 let content =
                     `   <div class="card h-100">    
@@ -32,7 +34,7 @@
                         </div>
                     </div>`;
 
-                let child = document.createElement("div");
+                const child = document.createElement("div");
                 child.setAttribute("class", "col-sm-12 col-md-6 col-lg-4");
                 child.innerHTML = content;
                 $("#appendData").append(child);
@@ -43,7 +45,13 @@
         // Listener to Product Types
         Array.prototype.forEach.call($("#theFixed>.list-group-item"), type => {
             type.onclick = () =>{
-                console.log($(type).attr("data-item"));
+                $("#loader").fadeIn(300);
+                const item = $(type).attr("data-item");
+                const param = item == "all" ? {} : {"type": item};
+                $.get('/API/product', param, parseData, "json")
+                    .always(() => {
+                        $("#loader").hide();
+                    });
             };
         });
 
@@ -52,11 +60,11 @@
         setTimeout(() => $("#msg-error").slideUp(300), 1500);
 
         // Initial Products loader
-        $.get('/API/product', parseData,"json")
-                .always(() => {
-                    $("#loader").hide();
-                    $("footer").fadeIn(300);
-                });
+        $.get('/API/product', parseData, "json")
+            .always(() => {
+                $("#loader").hide();
+                $("footer").fadeIn(300);
+            });
         $("#loader").fadeIn(300);
 
     });

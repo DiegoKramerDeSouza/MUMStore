@@ -20,6 +20,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8fd24b2ea7.js"></script>
     <script src="../resource/script/productScript.js" crossorigin="anonymous"></script>
+    ${user != null ? null : "<script src='resource/script/checkCookies.js'></script>"}
 </head>
 <body class="bg-light">
 <nav class="navbar navbar-light bg-dark justify-content-between">
@@ -92,38 +93,40 @@
     </div>
 </div>
 
- <!--Cart Modal Content-->
-  <div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <h3 ><i class="fas fa-shopping-cart  "></i> Cart</h3>
-        <div class="dropdown-divider"></div>
+<!--Cart Modal Content-->
+<div class="modal fade" id="cart-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content card-body text-left">
+            <h3><i class="fas fa-shopping-cart"></i> Cart (${items > 0 ? items : 0})</h3>
+            <div class="dropdown-divider"></div>
 
-         <!-- repeat this for each product -->
+            <!-- repeat this for each product -->
             <c:forEach items="${cart}" var="product">
-            <div id="cartshow" class="row ">
-                <div class="col-sm-3">
-                  <img src="<c:url value="${product[3]}"  />"  alt="<c:out value="${product[0]}"  />">
+                <div id="cartshow" class="row">
+                    <div class="col-sm-3 text-right">
+                        <img src="<c:url value="${product[3]}"  />"  alt="<c:out value="${product[0]}" />">
+                    </div>
+                    <div class="col-sm-5">
+                        <h6 class="mt-0"><c:out value="${product[0]}" /></h6>
+                    </div>
+                    <div class="col-sm-4 text-left">
+                        <span>Quantity <strong><c:out value="${product[6]}" /></strong></span>
+                    </div>
                 </div>
+            </c:forEach>
 
-                <div class="col-sm-5">
-                    <h6 class="mt-0"><c:out value="${product[0]}" /></h6>
-
-                </div>
-              <div class="col-sm-4">
-                 <span>Quantity <c:out value="${product[6]}" /></span>
-              </div>
-
+            <div class="my-4 text-center emptyCart ${items > 0 ? "dnone" : null}">
+                <h3><i class="far fa-frown fa-lg"></i></h3>
+                <h3>Your cart is empty!</h3>
             </div>
 
-            </c:forEach>
             <div class="dropdown-divider"></div>
-        <div class="text-center">
-            <a href="/checkout" class="btn btn-success checkoutbtn">Checkout</a>
+            <div class="text-right">
+                <a href="/checkout" class="btn btn-danger checkoutbtn">Checkout</a>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 <!--Bottom Footer-->
 <footer class="bottom section-padding">
     <div class="container">

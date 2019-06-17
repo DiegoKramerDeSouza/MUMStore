@@ -38,8 +38,10 @@ public class LoginController extends HttpServlet {
             HttpSession session = req.getSession();
             if(me != null){
                 String item = me.getKey() + "";
+                List<String[]> cart = me.getCart();
+                int items = me.getCart().size();
                 if(item.equals(key)){
-                    prepareSession(resp, session, me, email);
+                    prepareSession(resp, session, me, email, items, cart);
                     return;
                 }
             }
@@ -57,20 +59,24 @@ public class LoginController extends HttpServlet {
         HttpSession session = req.getSession();
         if(me != null){
             if(me.validate(email, pass)){
-                prepareSession(resp, session, me, email);
+                List<String[]> cart = me.getCart();
+                int items = me.getCart().size();
+                prepareSession(resp, session, me, email, items, cart);
                 return;
             }
         }
         resp.sendRedirect("/?E=10");
     }
 
-    private void prepareSession(HttpServletResponse resp, HttpSession session, User me, String email) throws ServletException, IOException{
+    private void prepareSession(HttpServletResponse resp, HttpSession session, User me, String email, int items, List<String[]> cart)
+            throws ServletException, IOException{
+
         session.setMaxInactiveInterval(maxAge);
         me.setTotal();
         session.setAttribute("user", email);
         session.setAttribute("address", me.getAddress());
-        session.setAttribute("cart", me.getCart());
-        session.setAttribute("items", me.getCart().size());
+        session.setAttribute("cart", cart);
+        session.setAttribute("items", items);
         session.setAttribute("total", me.getTotal());
 
         Cookie cookie = new Cookie("user", me.getName());
@@ -80,9 +86,6 @@ public class LoginController extends HttpServlet {
         cookie.setMaxAge(maxAge);
         resp.addCookie(cookie);
         cookie = new Cookie("holder", me.getKey() + "");
-        cookie.setMaxAge(maxAge);
-        resp.addCookie(cookie);
-        cookie = new Cookie("items", me.getCart().size() + "");
         cookie.setMaxAge(maxAge);
         resp.addCookie(cookie);
         resp.sendRedirect("/");
