@@ -48,14 +48,14 @@ $(function (){
                                 <div class="section">
                                     <h6 class="title-attr">Quantity</h6>
                                     <div class="btnclass">
-                                        <form method="post">
-                                            <input type="number" min="0" value="1" name="qtd" />
+                                        <form action="/API/product" method="post">
+                                            <input type="number" min="1" value="1" name="qtd" />
                                             <input type="hidden" value="${data[0].name}" name="name" />
                                             <input type="hidden" value="${data[0].id}" name="id" />
                                             <input type="hidden" value="${data[0].price}" name="price" />
                                             <input type="hidden" value="${data[0].picture}" name="pic" />
-                                            <input type="hidden" value="${data[0].description}" name="name" />
-                                            <input type="hidden" value="${data[0].type}" name="name" />
+                                            <input type="hidden" value="${data[0].description}" name="desc" />
+                                            <input type="hidden" value="${data[0].type}" name="type" />
                                             <div class="dropdown-divider"></div>
                                             <div class="section">
                                                 <input type="submit" class="btn btn-success" value="Add to cart">
