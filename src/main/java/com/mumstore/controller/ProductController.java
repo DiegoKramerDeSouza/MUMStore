@@ -86,11 +86,12 @@ public class ProductController extends HttpServlet {
 
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
         String time = timestamp.getTime() + "";
-        List<String> product = Arrays.asList(name, id, price, pic, desc, type, qtd, time);
+        String[] itemData = {name, id, price, pic, desc, type, qtd, time};
+        List<String> product = Arrays.asList(itemData);
+
         if(dao.addToCart(con, product, email) && email != null){
-            String[] list = {name, id, price, pic, desc, type, qtd};
             List<String[]> items = (List<String[]>) session.getAttribute("cart");
-            items.add(list);
+            items.add(itemData);
             setAttributes(items, session);
 
             resp.sendRedirect("/checkout?E=0");
