@@ -1,14 +1,8 @@
 $(function () {
 
-    setTimeout(() => $("#msg-success").slideUp(300), 1500);
-    setTimeout(() => $("#msg-error").slideUp(300), 1500);
-    $.get('/API/product', parseData,"json");
-
     function parseData(data) {
         console.log(data.picture);
         for(var i=0; i<data.length;i++){
-            console.log(data[i].price);
-            //console.log(data[i].picture);
 
             let content =
                 `<div class="col-sm-12 col-md-6 col-lg-4">
@@ -28,12 +22,12 @@ $(function () {
                         <div class="card-footer">
                         <form action="/API/product" method="post">
                           <input type="hidden" value="1" name="qtd" />
-                          <input type="hidden" value="${data[0].name}" name="name" />
-                          <input type="hidden" value="${data[0].id}" name="id" />
-                          <input type="hidden" value="${data[0].price}" name="price" />
-                          <input type="hidden" value="${data[0].picture}" name="pic" />
-                          <input type="hidden" value="${data[0].description}" name="desc" />
-                          <input type="hidden" value="${data[0].type}" name="type" />
+                          <input type="hidden" value="${data[i].name}" name="name" />
+                          <input type="hidden" value="${data[i].id}" name="id" />
+                          <input type="hidden" value="${data[i].price}" name="price" />
+                          <input type="hidden" value="${data[i].picture}" name="pic" />
+                          <input type="hidden" value="${data[i].description}" name="desc" />
+                          <input type="hidden" value="${data[i].type}" name="type" />
                           <input type="submit"  class="btn btn-success" value="Add to Cart">
                          </form>
                         </div>
@@ -47,5 +41,9 @@ $(function () {
 
         }
     };
+
+    setTimeout(() => $("#msg-success").slideUp(300), 1500);
+    setTimeout(() => $("#msg-error").slideUp(300), 1500);
+    $.get('/API/product', parseData,"json");
 
 });
