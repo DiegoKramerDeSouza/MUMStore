@@ -29,7 +29,7 @@
                           <input type="hidden" value="${data[i].picture}" name="pic" />
                           <input type="hidden" value="${data[i].description}" name="desc" />
                           <input type="hidden" value="${data[i].type}" name="type" />
-                          <input type="submit"  class="btn btn-success" value="Add to Cart">
+                          <input type="submit"  class="btn btn-success" value="Add to Cart"/>
                          </form>
                         </div>
                     </div>`;
