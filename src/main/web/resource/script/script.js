@@ -1,11 +1,22 @@
 
 $(window).scroll(function() {
+
+    $("#theFixed").css("top", Math.max(0, 850 - $(this).scrollTop()));
+
+
+});
+
+$(document).ready(function(){
+
     $("#theFixed").css("top", Math.max(0, 850 - $(this).scrollTop()));
 
 });
 
-$(window).scroll(function() {
-})
+
+
+
+
+
 
 $(function () {
         $.get('/API/product', parseData,"json");
