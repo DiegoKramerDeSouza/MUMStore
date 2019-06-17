@@ -30,27 +30,63 @@ public class LoginController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
+        String key = req.getParameter("key");
         String email = req.getParameter("user");
+        if(key != null){
+            System.out.println("--->" + key);
+            MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
+            User me = dao.authenticate(con, email);
+            HttpSession session = req.getSession();
+            System.out.println("--->" + me);
+            if(me != null){
+
+                String item = me.getKey() + "";
+                System.out.println("--->" + item.equals(key));
+                if(item.equals(key)){
+                    prepareSession(resp, session, me, email);
+                    return;
+                }
+            }
+            resp.sendRedirect("/");
+        } else {
+            auth(req, resp, email);
+        }
+    }
+
+    private void auth(HttpServletRequest req, HttpServletResponse resp, String email)  throws ServletException, IOException {
+
+        MongoDatabase con = (MongoDatabase) sc.getAttribute("dbdatabase");
         String pass = req.getParameter("pass");
-        User me = dao.authenticate(con, email, pass);
+        User me = dao.authenticate(con, email);
         HttpSession session = req.getSession();
         if(me != null){
             if(me.validate(email, pass)){
-                session.setMaxInactiveInterval(60 * 60);
-                me.setTotal();
-                session.setAttribute("user", email);
-                session.setAttribute("address", me.getAddress());
-                session.setAttribute("cart", me.getCart());
-                session.setAttribute("total", me.getTotal());
-
-                Cookie cookie = new Cookie("user", me.getName());
-                cookie.setMaxAge(maxAge);
-                resp.addCookie(cookie);
-                resp.sendRedirect("/");
+                prepareSession(resp, session, me, email);
                 return;
             }
         }
         resp.sendRedirect("/?E=10");
     }
+
+    private void prepareSession(HttpServletResponse resp, HttpSession session, User me, String email) throws ServletException, IOException{
+        session.setMaxInactiveInterval(60 * 60);
+        me.setTotal();
+        session.setAttribute("user", email);
+        session.setAttribute("address", me.getAddress());
+        session.setAttribute("cart", me.getCart());
+        session.setAttribute("total", me.getTotal());
+
+        Cookie cookie = new Cookie("user", me.getName());
+        cookie.setMaxAge(maxAge);
+        resp.addCookie(cookie);
+        cookie = new Cookie("mail", me.getEmail());
+        cookie.setMaxAge(maxAge);
+        resp.addCookie(cookie);
+        cookie = new Cookie("holder", me.getKey() + "");
+        cookie.setMaxAge(maxAge);
+        resp.addCookie(cookie);
+        resp.sendRedirect("/");
+    }
+
+
 }

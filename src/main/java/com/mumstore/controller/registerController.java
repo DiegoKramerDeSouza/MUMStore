@@ -36,7 +36,7 @@ public class registerController extends HttpServlet {
         String address = req.getParameter("address");
         HttpSession session = req.getSession();
         if(validate(user, email, pass, confirm, address)){
-            User me = dao.authenticate(con, email, pass);
+            User me = dao.authenticate(con, email);
             if(me == null){
                 int total = dao.countUsers(con);
                 if(dao.registerUser(con, total ,user, email, pass, address)){
