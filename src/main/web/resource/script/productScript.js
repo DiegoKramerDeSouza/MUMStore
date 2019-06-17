@@ -20,6 +20,7 @@ $(document).ready(function () {
 
 });
 $(function (){
+
     function initialize(){
         let urlpath = window.location.href;
         let url = new URL(urlpath);

@@ -80,7 +80,7 @@
                 </div>
             </div>
 
-            <!--Login Modal Content-->
+            <!--ogin Modal Content-->
             <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
                 <div class="modal-dialog" role="document">

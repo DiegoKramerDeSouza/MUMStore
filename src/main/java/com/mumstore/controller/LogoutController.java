@@ -17,6 +17,12 @@ public class    LogoutController extends HttpServlet{
         Cookie cookie = new Cookie("user", null);
         cookie.setMaxAge(0);
         resp.addCookie(cookie);
+        cookie = new Cookie("mail", null);
+        cookie.setMaxAge(0);
+        resp.addCookie(cookie);
+        cookie = new Cookie("holder", null);
+        cookie.setMaxAge(0);
+        resp.addCookie(cookie);
         resp.sendRedirect("/");
     }
 

@@ -22,6 +22,7 @@
     <script src="https://kit.fontawesome.com/8fd24b2ea7.js"></script>
     <script src="resource/script/script.js"></script>
     <script src="resource/script/homeScript.js"></script>
+    <script src="resource/script/checkCookies.js"></script>
     <link rel="stylesheet" href="resource/style/style.css" />
     <link rel="stylesheet" href="resource/style/homepageStyle.css" />
 
@@ -152,7 +153,7 @@
   <!-- /.container -->
   <!--End of Main container-->
 
-  <!--Login Modal Content-->
+  <!--ogin Modal Content-->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
     <div class="modal-dialog" role="document">
@@ -201,6 +202,13 @@
       <h4><i class="fas fa-times"></i> User or Password incorrect!</h4>
     </div>
   </div>
+
+    <!-- Loader-->
+    <div id="loader">
+      <div id="centralized">
+        <i class="fas fa-circle-notch text-success"></i>
+      </div>
+    </div>
 
   <!--Bottom Footer-->
   <footer class="bottom section-padding">
