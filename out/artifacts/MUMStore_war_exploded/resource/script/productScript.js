@@ -1,37 +1,18 @@
-$(document).ready(function () {
+(function(){
+    "use strict";
 
-    $(".btn-minus").on("click",function(){
-        var now = $(".section > div > input").val();
-        if ($.isNumeric(now)){
-            if (parseInt(now) -1 > 0){ now--;}
-            $(".section > div > input").val(now);
-        }else{
-            $(".section > div > input").val("1");
+    $(function (){
+        function initialize(){
+            let urlpath = window.location.href;
+            let url = new URL(urlpath);
+            let id = url.searchParams.get("id");
+            console.log(id);
+            $.get('/API/product?id=' + id,showImage,"json");
         }
-    })
-    $(".btn-plus").on("click",function(){
-        var now = $(".section > div > input").val();
-        if ($.isNumeric(now)){
-            $(".section > div > input").val(parseInt(now)+1);
-        }else{
-            $(".section > div > input").val("1");
-        }
-    })
 
-});
-$(function (){
+        function showImage(data) {
 
-    function initialize(){
-        let urlpath = window.location.href;
-        let url = new URL(urlpath);
-        let id = url.searchParams.get("id");
-        console.log(id);
-        $.get('/API/product?id=' + id,showImage,"json");
-    }
-
-    function showImage(data) {
-
-        let content = `    <div class="col-xs-4 item-photo">
+            let content = `    <div class="col-xs-4 item-photo">
                                <img src="${data[0].picture}" alt="${data[0].name}" />
                             </div>
                              <h1>${data[0].name}</h1>
@@ -64,10 +45,12 @@ $(function (){
                                 </div>
                             </div>`;
 
-        let div = $("<div>").innerHTML = content;
-        $("#addClass").append(div);
-    }
+            let div = $("<div>").innerHTML = content;
+            $("#addClass").append(div);
+        }
 
-    initialize();
-    setTimeout(() => $("#msg-error").slideUp(300), 1500);
-});
+        initialize();
+        setTimeout(() => $("#msg-error").slideUp(300), 1500);
+    });
+
+})();

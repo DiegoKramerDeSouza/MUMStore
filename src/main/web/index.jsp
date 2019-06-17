@@ -61,15 +61,20 @@
 
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="resource/img/banner1.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">
       </div>
       <div class="carousel-item">
-        <img src="resource/img/banner1.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">
+        <img src="resource/img/banner2.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">
       </div>
       <div class="carousel-item">
-        <img src="resource/img/banner1.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">
+        <img src="resource/img/banner3.jpg" class="d-block w-100" alt="MUM STORE BANNER" class="img-responsive">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -89,23 +94,20 @@
 
     <div class="row">
 
-      <div class="leftbar col-lg-3">
+      <div class="leftbar col-md-4 col-lg-3">
 
 
         <div class="list-group" id="theFixed">
-          <a href="#" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
-          <a href="#" class="list-group-item">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
+          <a data-item="notebook" class="list-group-item"><i class="fas fa-laptop"></i> Notebook</a>
+          <a data-item="smartphone" class="list-group-item"><i class="fas fa-mobile-alt"></i> Smartphone</a>
+          <a data-item="accessories" class="list-group-item"><i class="fas fa-headphones-alt"></i> Accessories</a>
         </div>
 
       </div>
       <!-- /.col-lg-3 -->
 
-      <div class="col-lg-9">
-
+      <div class="col">
+        <!--
         <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -132,15 +134,13 @@
             <span class="sr-only">Next</span>
           </a>
         </div>
+        -->
 
-        <div class="row" id="showData">
+        <div class="row my-4" id="showData">
           <div class="display">
-
             <div class="row" id="appendData">
-<%--            Display block here--%>
-
+              <%--Display block here--%>
             </div>
-
         </div>
         <!-- /.row -->
 
@@ -224,6 +224,13 @@
   <div id="msg-error" class="card bg-danger text-light custom-msg ${param.E == 10 ? null : "dnone"}">
     <div class="card-body">
       <h4><i class="fas fa-times"></i> User or Password incorrect!</h4>
+    </div>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div id="central">
+      <i class="fas fa-sync-alt"></i>
     </div>
   </div>
 

@@ -39,7 +39,7 @@
     </div>
 </nav>
 <div class="container">
-    <div class="card">
+    <div class="card my-4">
         <div class="card-body">
             <h1 class="card-title">Checkout</h1>
             <!-- repeat this for each product -->

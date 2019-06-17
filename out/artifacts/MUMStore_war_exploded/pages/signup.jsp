@@ -32,7 +32,7 @@
             </div>
         </nav>
         <div class="container">
-            <div class="card">
+            <div class="card my-4">
                 <div class="card-body">
                     <form class="form-horizontal" role="form" action="/API/register" method="post">
                         <h2>Registration</h2>

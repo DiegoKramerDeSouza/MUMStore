@@ -1,13 +1,11 @@
+(function(){
+    "use strict";
 
-$(window).scroll(function() {
+    $(function () {
+        $("#theFixed").css("top", Math.max(0, 600 - $(this).scrollTop()));
+        $(window).scroll(function() {
+            $("#theFixed").css("top", Math.max(0, 600 - $(this).scrollTop()));
+        });
+    });
+})();
 
-
-    $("#theFixed").css("top", Math.max(0, 850 - $(this).scrollTop()));
-
-
-});
-$(function () {
-
-    $("#theFixed").css("top", Math.max(0, 850 - $(this).scrollTop()));
-
-});
