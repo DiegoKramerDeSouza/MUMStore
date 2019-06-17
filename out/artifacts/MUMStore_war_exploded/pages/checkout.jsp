@@ -53,8 +53,7 @@
                         <div class="text-right">
                             <form action="/API/product" method="post">
                                 <span>Quantity <c:out value="${product[6]}" /></span>
-                                <input type="hidden" name="id" value="${product[1]}">
-                                <input type="hidden" name="qtd" value="${product[6]}">
+                                <input type="hidden" name="id" value="${product[7]}">
                                 <input type="hidden" name="remove" value="remove">
                                 <input type="submit" class="btn btn-sm btn-outline-danger" value="Remove" />
                             </form>

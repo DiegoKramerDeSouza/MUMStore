@@ -20,6 +20,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Array;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -68,7 +69,7 @@ public class ProductController extends HttpServlet {
 
         if(req.getParameter("remove") != null){
             List<String[]> items = (List<String[]>) session.getAttribute("cart");
-            List<String[]> newItems = items.stream().filter(item -> !(item[1].equals(id) && item[6].equals(qtd)))
+            List<String[]> newItems = items.stream().filter(item -> !item[7].equals(id))
                                         .collect(Collectors.toList());
             System.out.println(newItems);
             setAttributes(newItems, session);
@@ -83,7 +84,9 @@ public class ProductController extends HttpServlet {
         String desc = req.getParameter("desc");
         String type = req.getParameter("type");
 
-        List<String> product = Arrays.asList(name, id, price, pic, desc, type, qtd);
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        String time = timestamp.getTime() + "";
+        List<String> product = Arrays.asList(name, id, price, pic, desc, type, qtd, time);
         if(dao.addToCart(con, product, email) && email != null){
             String[] list = {name, id, price, pic, desc, type, qtd};
             List<String[]> items = (List<String[]>) session.getAttribute("cart");

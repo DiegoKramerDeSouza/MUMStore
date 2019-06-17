@@ -19,7 +19,7 @@ public class LoginController extends HttpServlet {
     private UserDAO dao;
     private Gson mapper = new Gson();
     private ServletContext sc;
-    private int maxAge = 30 * 24 * 60 * 60;
+    private int maxAge = 60 * 60;
 
 
     @Override
@@ -65,7 +65,7 @@ public class LoginController extends HttpServlet {
     }
 
     private void prepareSession(HttpServletResponse resp, HttpSession session, User me, String email) throws ServletException, IOException{
-        session.setMaxInactiveInterval(60 * 60);
+        session.setMaxInactiveInterval(maxAge);
         me.setTotal();
         session.setAttribute("user", email);
         session.setAttribute("address", me.getAddress());
