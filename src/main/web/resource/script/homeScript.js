@@ -6,13 +6,13 @@
             $("#appendData").empty();
             for(var i=0; i<data.length;i++){
                 let content =
-                    `<div class="card h-100">    
+                    `<div class="card custom-card">    
                         <a href="/product?id=${data[i].id}">
                           <p><img class="card-img-top" src="${data[i].picture}" alt="${data[i].name}"/></p>
                         </a>
                         <div class="card-body">
                               <h4 class="card-title">
-                                    <a href="#">111 ${data[i].name}</a>
+                                    <a href="#">${data[i].name}</a>
                               </h4>
                               <p><h5>$${data[i].price}</h5></p>
                               <p class="card-text text-truncate" id="productDesc" title="${data[i].description}">

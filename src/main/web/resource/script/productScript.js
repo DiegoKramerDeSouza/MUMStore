@@ -12,8 +12,8 @@
 
         function showImage(data) {
 
-            let content = `    <div class="col-xs-4 item-photo">
-                               <img src="${data[0].picture}" alt="${data[0].name}" />
+            let content = `<div class="col-xs-4 item-photo">
+                               <img id="product-img" src="${data[0].picture}" alt="${data[0].name}" />
                             </div>
                              <h1>${data[0].name}</h1>
                              <h3>Price: $ ${data[0].price}</h3>
