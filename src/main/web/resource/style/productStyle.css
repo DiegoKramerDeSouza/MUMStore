@@ -37,6 +37,10 @@ h3{
     font-size: inherit;
 }
 
+#product-img{
+    max-width: 100%;
+}
+
 footer{
     position: fixed;
     bottom: 0px;

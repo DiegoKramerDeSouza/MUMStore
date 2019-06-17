@@ -142,6 +142,9 @@
             <div class="row" id="appendData">
               <%--Display block here--%>
             </div>
+            <div class="row" id="appendData2">
+              <%--Display block here--%>
+            </div>
         </div>
         <!-- /.row -->
 
