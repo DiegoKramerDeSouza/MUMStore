@@ -25,11 +25,27 @@ $(function () {
                             ${data[i].description}
                           </p>
                         </div>
-                        <div class="card-footer">
-                          <a href="/checkout?id=${data[i].id}" class="btn btn-success">Add to Cart</a>
-                        </div>
-                    </div>
-                   </div>`;
+                        <div class="blockinline">
+                                <div class="dropdown-divider"></div>
+                                <div class="section float-right">
+                                    <h6 class="title-attr">Quantity:</h6>
+                                    <div class="btnclass">
+                                        <form action="/API/product" method="post">
+                                            <input type="hidden" value="1" name="qtd" />
+                                            <input type="hidden" value="${data[i].name}" name="name" />
+                                            <input type="hidden" value="${data[i].id}" name="id" />
+                                            <input type="hidden" value="${data[i].price}" name="price" />
+                                            <input type="hidden" value="${data[i].picture}" name="pic" />
+                                            <input type="hidden" value="${data[i].description}" name="desc" />
+                                            <input type="hidden" value="${data[i].type}" name="type" />
+                                            <div class="section">
+                                                <br />
+                                                <input type="submit" class="btn btn-success" value="Add to cart">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>`;
 
 
 
