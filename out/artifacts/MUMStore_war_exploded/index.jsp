@@ -21,7 +21,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/8fd24b2ea7.js"></script>
     <script src="resource/script/script.js"></script>
-    <script src="resource/script/checkCookies.js"></script>
+    ${user != null ? null : "<script src='resource/script/checkCookies.js'></script>"}
     <script src="resource/script/homeScript.js"></script>
 
     <link rel="stylesheet" href="resource/style/style.css" />
@@ -32,7 +32,7 @@
   <nav class="navbar navbar-light bg-dark justify-content-between">
     <a class="navbar-brand" href="/">MUM STORE</a>
     <div class="" id="smallbar">
-      <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value != null ? "dnone" : null}">
+      <form class="form-inline my-2 my-lg-0 mr-auto ${username != null ? "dnone" : null}">
         <a data-toggle="modal" data-target="#cart-modal" class="btn btn-success my-2 my-sm-0 btn-sm" >
           <i class="fas fa-shopping-cart"></i> Cart (${items > 0 ? items : 0})
         </a> &nbsp;
@@ -43,10 +43,10 @@
           <i class="fas fa-user-circle"></i> Login
         </a> &nbsp;
       </form>
-      <form class="form-inline my-2 my-lg-0 mr-auto ${cookie.user.value == null ? "dnone" : null}">
+      <form class="form-inline my-2 my-lg-0 mr-auto ${username == null ? "dnone" : null}">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fas fa-user-circle"></i> ${cookie.user.value}
+            <i class="fas fa-user-circle"></i> ${username}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a data-toggle="modal" data-target="#cart-modal" class="dropdown-item" ><i class="fas fa-shopping-cart"></i> Cart (${items > 0 ? items : 0})</a>

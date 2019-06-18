@@ -2,7 +2,7 @@
     "use strict";
 
     //Check for cookies and try to login
-    $(function () {
+
 
         let cookies = document.cookie.split("; ");
         if(cookies.length == 3){
@@ -19,12 +19,13 @@
 
         function logging(){
             console.log("Logged successfully!");
+            location.reload();
         }
         function ajaxFailure() {
             console.error("Login Fail!");
         }
 
-    });
+
 
 })();
 
