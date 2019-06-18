@@ -51,6 +51,7 @@
         </form>
     </div>
 </nav>
+<%--For displaying message--%>
 <div class="container">
     <div id="msg-error" class="card bg-danger text-light custom-msg my-4 ${param.E == 1 ? null : "dnone"}">
         <div class="card-body">
