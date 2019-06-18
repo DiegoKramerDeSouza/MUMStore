@@ -36,6 +36,7 @@ public class registerController extends HttpServlet {
         String address = req.getParameter("address");
         HttpSession session = req.getSession();
         if(validate(user, email, pass, confirm, address)){
+//            check if email is already registered or not
             User me = dao.authenticate(con, email);
             if(me == null){
                 int total = dao.countUsers(con);
