@@ -28,6 +28,7 @@
                                 <div class="section float-right">
                                     <h6 class="title-attr">Quantity:</h6>
                                     <div class="btnclass">
+<!--                                    For updating item to cart in user collection-->
                                         <form action="/API/product" method="post">
                                             <input type="number" min="1" value="1" name="qtd" />
                                             <input type="hidden" value="${data[0].name}" name="name" />
@@ -50,6 +51,7 @@
         }
 
         initialize();
+        //to dispaly message when user is not logged in
         setTimeout(() => $("#msg-error").slideUp(300), 1500);
     });
 
