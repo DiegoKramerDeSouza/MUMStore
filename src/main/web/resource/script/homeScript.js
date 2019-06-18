@@ -15,7 +15,7 @@
                                     <a href="/product?id=${data[i].id}" title="${data[i].name}">${data[i].name}</a>
                               </h4>
                               <p><h5>$${data[i].price}</h5></p>
-                              <p class="card-text" id="productDesc" title="${data[i].description}">
+                              <p class="card-text text-truncate" id="productDesc" title="${data[i].description}">
                                     ${data[i].description}
                               </p>
                         </div>
