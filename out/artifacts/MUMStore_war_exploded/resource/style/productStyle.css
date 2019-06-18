@@ -41,6 +41,10 @@ h3{
     max-width: 100%;
 }
 
+#addClass{
+    margin-bottom: 80px;
+}
+
 footer{
     position: fixed;
     bottom: 0px;

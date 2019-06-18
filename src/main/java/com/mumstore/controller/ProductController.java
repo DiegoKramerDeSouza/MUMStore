@@ -79,7 +79,7 @@ public class ProductController extends HttpServlet {
 
         } else if(req.getParameter("checkout") != null){
             // Remove all products from cart
-            List<String[]> items = Arrays.asList();
+            List<String[]> items = new ArrayList<>();
             setAttributes(items, session);
             dao.removeAllFromCart(con, email);
             resp.sendRedirect("/checkout?E=10");
@@ -102,7 +102,6 @@ public class ProductController extends HttpServlet {
             List<String[]> items = (List<String[]>) session.getAttribute("cart");
             items.add(itemData);
             setAttributes(items, session);
-
             resp.sendRedirect("/checkout?E=0");
             return;
         }

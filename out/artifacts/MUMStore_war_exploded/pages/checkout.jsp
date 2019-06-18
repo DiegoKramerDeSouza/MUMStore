@@ -28,7 +28,7 @@
         <form class="form-inline my-2 my-lg-0 mr-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user-circle"></i> ${cookie.user.value}
+                    <i class="fas fa-user-circle"></i> ${username}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" data-toggle="modal" data-target="#cart-modal" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
@@ -40,7 +40,7 @@
     </div>
 </nav>
 <div class="container">
-    <div class="card my-4">
+    <div id="main-cart" class="card my-4">
         <div class="card-body">
             <h1 class="card-title">Checkout</h1>
             <div class="dropdown-divider"></div>
@@ -69,9 +69,10 @@
                     </div>
                 </div>
             </c:forEach>
-            <div class="my-4 text-center ${items > 0 ? "dnone" : null}">
+            <div class="my-4 emptyCart text-center ${items > 0 ? "dnone" : null}">
+                <br />
                 <h1><i class="far fa-frown fa-lg"></i></h1>
-                <h2>Your cart is empty!</h2>
+                <h1>Your cart is empty!</h1>
             </div>
 
             <div class="${items > 0 ? null : "dnone"}">
@@ -129,9 +130,9 @@
 </div>
 
 <%--For message--%>
-<div id="msg-success" class="card bg-success text-light custom-msg ${param.E == 10 ? null : "dnone"}">
+<div id="msg-success" class="bg-success text-light ${param.E == 10 ? null : "dnone"}">
     <div class="card-body">
-        <h4><i class="far fa-laugh-beam"></i> Thank you for shopping with us!</h4>
+        <h1><i class="far fa-laugh-beam"></i> Thank you for shopping with us!</h1>
     </div>
 </div>
 

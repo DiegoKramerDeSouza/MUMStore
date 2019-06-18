@@ -74,6 +74,7 @@ public class LoginController extends HttpServlet {
         session.setMaxInactiveInterval(maxAge);
         me.setTotal();
         session.setAttribute("user", email);
+        session.setAttribute("username", me.getName());
         session.setAttribute("address", me.getAddress());
         session.setAttribute("cart", cart);
         session.setAttribute("items", items);
