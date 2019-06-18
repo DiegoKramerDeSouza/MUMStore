@@ -31,7 +31,7 @@
                     <i class="fas fa-user-circle"></i> ${username}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" data-toggle="modal" data-target="#cart-modal" href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+                    <a class="dropdown-item" data-toggle="modal" data-target="#cart-modal" href="#"><i class="fas fa-shopping-cart"></i> Cart(${items > 0 ? items : 0})</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item logout" href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
                 </div>
